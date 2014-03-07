@@ -55,6 +55,154 @@
     </div>
 
 
+    <!-- ========== -->
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1>SAGA-Python</h1>
+      </div>
+      <p class="lead">A Simple API for Grid and Distributed Applications</p>
+            <p align="justify">
+              SAGA (<em>Simple API for Grid Applications</em>)
+              defines a high-level interface to the most commonly
+              used distributed computing functionality. SAGA
+              provides an access-layer and mechanisms for
+              distributed infrastructure components like job
+              schedulers, file transfer and resource provisioning
+              services. Given the heterogeneity of distributed
+              infrastructure, SAGA provides a much needed
+              interoperability layer that lowers the complexity and
+              improves the simplicity of using distributed
+              infrastructure whilst enhancing the sustainability of
+              distributed applications, services and tools.
+            </p>
+            <p align="justify">
+              <em>SAGA-Python</em> provides a Python module that is
+              compliant with the <a href=
+              "http://www.ogf.org/documents/GFD.90.pdf">OGF
+              GFD.90</a> SAGA specification. Behind the API façade,
+              SAGA-Python implements a flexible <em>adaptor</em>
+              architecture. Adaptors are dynamically loadable
+              modules that interface the API with different
+              middleware systems and services. Most application
+              developers use the adaptors that are already part of
+              SAGA-Python, but you can easily implement your own in
+              case your backend system is not supported yet.
+            </p>
+            <p align="justify">
+              SAGA-Python's main focus is ease of use and simple
+              user-space deployment in heterogeneous distributed
+              computing environments. It supports a wide range of
+              application use-cases from simple, uncoupled tasks to
+              complex workflows. SAGA-Python is being used on many
+              distributed cyberinfrastructures, including <a href=
+              "">XSEDE</a>, <a href="">OSG</a> and <a href=
+              "">FutureGrid</a> where it marshals <em>tens of
+              thousands</em> of cores and moves <em>terabytes</em>
+              of data in production science applications.
+            </p>
+   
+        <p>
+          <a href="#getstarted" class=
+          "btn btn-primary btn-large smoothScroll">Get Started</a>
+        </p>
+
+
+
+
+
+      <div class="page-header">
+        <h2>Supported Middleware</h2>
+      </div>
+      <p class="lead">Extensible Connectivity Through Adaptors</p>
+
+            <p align="justify">
+              SAGA-Python supports a wide range of distributed
+              computing middleware and service via a flexible
+              <em>adaptor</em> architecture. Adaptors are plug-ins
+              that bind API calls to the respective backend.
+              SAGA-Python currently supports the following
+              backends:
+            </p>
+            <div class="well well-lg">
+              <h4>
+                Job Submission Systems
+              </h4><em>(All queuing system adaptors can also access
+              clusters remotely by tunneling commands through SSH
+              and GSISSH)</em>
+              <ul class="adaptors">
+                <li>
+                  <a href=
+                  "doc/adaptors/saga.adaptor.shell_job.html">SSH
+                  and GSISSH</a>
+                </li>
+                <li>
+                  <a href=
+                  "doc/adaptors/saga.adaptor.condorjob.html">Condor
+                  and Condor-G</a>
+                </li>
+                <li>
+                  <a href=
+                  "doc/adaptors/saga.adaptor.pbsjob.html">PBS and
+                  Torque</a>
+                </li>
+                <li>
+                  <a href=
+                  "doc/adaptors/saga.adaptor.sgejob.html">Sun Grid
+                  Engine</a>
+                </li>
+                <li>
+                  <a href=
+                  "doc/adaptors/saga.adaptor.slurm_job.html">SLURM</a>
+                </li>
+                <li>
+                  <a href=
+                  "doc/adaptors/saga.adaptor.lsfjob.html">LSF</a>
+                </li>
+                <li>LoadLeveler (Under Development)
+                </li>
+              </ul>
+            </div>
+            <div class="well well-lg">
+              <h4>
+                File / Data Management
+              </h4>
+              <ul class="adaptors">
+                <li>
+                  <a href=
+                  "doc/adaptors/saga.adaptor.shell_file.html">SFTP/GSIFTP</a>
+                </li>
+                <li>
+                  <a href=
+                  "doc/adaptors/saga.adaptor.http_file.html">HTTP/HTTPS</a>
+                </li>
+                <li>
+                  <a href=
+                  "doc/adaptors/saga.adaptor.replica.irods.html">iRODS</a>
+                </li>
+              </ul>
+            </div>
+            <div class="well well-lg">
+              <h4>
+                Resource Management / Clouds
+              </h4>
+              <ul class="adaptors">
+                <li>
+                  <a href=
+                  "doc/adaptors/saga.adaptor.ec2_resource.html">EC2
+                  (libcloud)</a>
+                </li>
+              </ul>
+
+
+
+    </div> <!-- CONTENT CONTAINER -->
+
+
+
+
+
 
     <div id="footer">
       <div class="container">
