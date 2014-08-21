@@ -1,0 +1,47 @@
+.btn-saga { 
+	background-color: #FFCC00; 
+	color: #333333;
+	border-color: #666666;
+}
+
+.btn-saga:hover { 
+	background-color: #FFCC00;
+	border-color: #666666;
+
+}
+
+.btn-pilot { 
+	background-color: #993366; 
+	color: #333333;
+	border-color: #666666;
+}
+
+.btn-pilot:hover { 
+	background-color: #993366;
+	border-color: #666666;
+
+}
+
+.btn-owms { 
+	background-color: #A57ECC; 
+	color: #333333;
+	border-color: #666666;
+}
+
+.btn-owms:hover { 
+	background-color: #A57ECC;
+	border-color: #666666;
+
+}
+
+.btn-enmd { 
+	background-color: #276A6A; 
+	color: #333333;
+	border-color: #666666;
+}
+
+.btn-enmd:hover { 
+	background-color: #276A6A;
+	border-color: #666666;
+
+}
