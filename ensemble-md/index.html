@@ -65,19 +65,39 @@
       <div class="page-header">
         <h1>Ensemble MD Toolkit</h1>
       </div>
-      <p class="lead">Under Development</p>
-      
+            <p class="lead" align="justify">
+              The Ensemble MD Toolkit is a Python library for developing and executing large-scale ensemble-based
+              Molecular Dynamics (MD) simulations and workflows.
+            </p>
+
             <p class="infoblurb" align="justify">
-The EnsembleMD Toolkit (EnMDTK) project is a loose collection of RADICAL-Pilot based tools, programming libraries and APIs that simplify and abstract common tasks, patters and tools for molecular dynamics workflows. All of these tools encapsulate at least one of the commonly used MD engines, GROMACS, AMBER and NAMD.
+
+              The goal of Ensemble MD Toolkit is to provide an MD-specific alternative to existing
+              High-Performance-Computing frameworks, libraries and workflow systems. The majority
+              of existing distributed computing solutions are generic (by design) and provide a level
+              of abstraction and interface that caters to any concurrent, distributed workflow.
+              Consequently, MD workflows are often modeled an executed via generic concurrent and distributed computing primitives.
 
             </p>
 
-            <p class="infoblurb">Join the mailinglist at <a href="https://groups.google.com/d/forum/ensemblemd-toolkit">https://groups.google.com/d/forum/ensemblemd-toolkit</a>
+            <p class="infoblurb" align="justify">
+
+              Ensemble MD Toolkit takes a different approach. It provides a set of explicit, predefined patterns
+              that are commonly found in MD workflows.
+              Instead of defining tasks and their dependencies, users of Ensemble MD Toolkit pick the pattern that represents their simulation’s workflow and populate it with kernels, an abstraction around MD tools, like Amber, Gromacs, NAMD, etc.
+
+
             </p>
 
-      <div class="page-header">
+            <p align="left">
+              <a href="http://radicalensemblemd.readthedocs.org/en/latest/" class=
+              "btn btn-enmd">Documentation and Download</a>
+            </p>
+
+
+      <!--div class="page-header">
         <h2>Coupled Simulation Analysis Execution (ExTASY)</h2>
-      </div>      
+      </div>
             <p class="infoblurb" align="justify"> ExTASY provides a command line interface to run multiple Molecular Dynamics simulations using Radical pilot as the underlying API coupled with Analysis tools.
             </p>
             <p align="left">
@@ -88,8 +108,8 @@ The EnsembleMD Toolkit (EnMDTK) project is a loose collection of RADICAL-Pilot b
 
       <div class="page-header">
         <h2>ReplicaExchange</h2>
-      </div>      
-            <p class="infoblurb" align="justify">Current version of this package aims at providing functionality to 
+      </div>
+            <p class="infoblurb" align="justify">Current version of this package aims at providing functionality to
 perform synchronous RE (temperature exchange) simulations with NAMD.
             </p>
             <p align="left">
@@ -102,7 +122,7 @@ perform synchronous RE (temperature exchange) simulations with NAMD.
 
       <div class="page-header">
         <h2>Multi-Task Multi-Stage (MTMS)</h2>
-      </div>      
+      </div>
             <p class="infoblurb" align="justify">
             The MTMS library allows a user to execute a multitude of tasks (parallel
             pipelines) with a certain number of stages (steps).
@@ -117,28 +137,28 @@ perform synchronous RE (temperature exchange) simulations with NAMD.
 
       <div class="page-header">
         <h2>Binding Affinity Calculation (HT-BAC)</h2>
-      </div>      
+      </div>
             <p class="infoblurb" align="justify">
             HT-BAC or "High-Throughput Binding Affinity Calculator' is a set of NAMD-based tools to
-            automate the workflow involved in molecular dynamics based binding affinity calculations. 
-            It was originally designed for the simulation of HIV-1 protease (PR) bound to a variety of 
-            ligands but has been extended for use with a wide range of pathologies such as the Abl tyrosine 
-            kinase and human epidermal growth factor receptor (EGFR). 
+            automate the workflow involved in molecular dynamics based binding affinity calculations.
+            It was originally designed for the simulation of HIV-1 protease (PR) bound to a variety of
+            ligands but has been extended for use with a wide range of pathologies such as the Abl tyrosine
+            kinase and human epidermal growth factor receptor (EGFR).
             </p>
             <p align="left">
           <a href="https://github.com/radical-cybertools/HT-BAC" class=
           "btn btn-enmd">Github Project</a>
         </p>
 
-    </div> <!-- CONTENT CONTAINER -->
+    </div> -->
 
 
 
 
     <div id="footer">
       <div class="container">
-        <p align="center">Copyright &copy; 2014 <a href="http://radical.rutgers.edu">RADICAL Research</a> at 
-          <a href="http://nsfcac.rutgers.edu">The Cloud and Autonomic Computing 
+        <p align="center">Copyright &copy; 2014 <a href="http://radical.rutgers.edu">RADICAL Research</a> at
+          <a href="http://nsfcac.rutgers.edu">The Cloud and Autonomic Computing
           Center, Rutgers University </a></p>
       </div>
     </div>
