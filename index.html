@@ -131,15 +131,7 @@ RADICAL Cybertools is supported by NSF ACI <a href="http://www.nsf.gov/awardsear
                 <div class="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">RADICAL-Pilot</h2>
-                    <p class="infoblurb">RADICAL-Pilot (also known as BigJob) is the <i>infrastructure
-                    abstraction layer</i> of the RADICAL Cybertools stack.
-                    It provides a programming library to create ad-hoc resource
-                    overlay and multilevel scheduling environments based on 
-                    <a href="https://en.wikipedia.org/wiki/Pilot_job">Pilot-Jobs</a>.
-                    RADICAL-Pilot can marshal and <i>O(10k)</i> distributed cores and 
-                    schedule <i>O(10k)</i> tasks in a single application context
-                    across multiple distributed distributed HPC resources.
-                    </p>
+                    <p class="infoblurb">RADICAL-Pilot uses pilots in order to achieve the scalable execution of large numbers of tasks. A pilot is a job submitted to a machine in order to acquire exclusive use of a chunk of its resources. Once the pilot becomes active, it can execute the tasks specified by the user. Instead of having each task waiting on a machine to be executed, the user only has to wait once with a pilot! RADICAL-Pilot allows users to specify resources in the form of pilots and their tasks separately so the user can wait once and run everything.
                     <p>
                       <a class="btn btn-pilot" role="button" href="./radical-pilot/try_it_online.html">Try It Online!</a>
                       <a class="btn btn-pilot" role="button" href="./radical-pilot/quick_start.html">Quick Start</a>
@@ -167,7 +159,7 @@ RADICAL Cybertools is supported by NSF ACI <a href="http://www.nsf.gov/awardsear
                     <div class="clearfix"></div>
                     <h2 class="section-heading">EnsembleMD Toolkit</h2>
                     <p class="infoblurb">
-                    The EnsembleMD Toolkit (EnMDTK) project is a loose collection of RADICAL-Pilot based tools, programming libraries and APIs that simplify and abstract common tasks, patters and tools for molecular dynamics workflows. All of these tools encapsulate at least one of the commonly used MD engines, GROMACS, AMBER and NAMD.
+                    Ensemble Toolkit gives the user a simple way to express the scientific workflows. By building upon RADICAL-Pilot, the user only has to wait once before running the entire workflow. The tool comes predefined with common workflow patterns so users can quickly alter to suit their needs, as well as the ability to define more complex workflows. Users only have to specify their resources in the form of pilots and the workflow in the form of patterns before executing the workflow itself.
                     </p>
                       <p>
                       <a class="btn btn-enmd" role="button" href="./ensemble-md/try_it_out.html">Try It Online!</a>
