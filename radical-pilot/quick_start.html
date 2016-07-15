@@ -67,7 +67,7 @@
     <div class="container">
 <h2 id="_get_ve">Requirements.</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>RADICAL-Pilot is written in Python. Python 2.7 or greater is a requirement.</p></div>
+<div class="paragraph"><p>RADICAL-Pilot is written in Python. Python 2.7 or greater is a requirement. RADICAL-Pilot supports Linux and Mac</p></div>
 </div>
 </div>
 <div class="container">
@@ -96,7 +96,7 @@ $ source RADICALPilot/bin/activate
 Scripts have a .py file extension. Run the following commands
 to launch a simple hello world application.</p></div>
 <div class="content">
-<pre><code>$ wget https://github.com/radical-cybertools/radical.pilot/blob/devel/examples/00_getting_started.py
+<pre><code>$ wget https://raw.githubusercontent.com/radical-cybertools/radical.pilot/master/examples/00_getting_started.py
 $ python 00_getting_started.py
 </code></pre>
 </div>
@@ -141,7 +141,7 @@ wait for 128 unit(s)
 --------------------------------------------------------------------------------
 finalize                                                                        
 
-closing session rp.session.iparask-VirtualBox.iparask.016981.0005              \
+closing session [session]                                                      \
 close pilot manager                                                            \
 wait for 1 pilot(s) *                                                         <font color="green">ok</font>
                                                                               <font color="green">ok</font>
@@ -152,7 +152,7 @@ session lifetime: 37.0s                                                       <f
 </code></pre></div></div>
 <div class="container">
   <div class="paragraph">
-    Explaination is going here
+    As this script is executed, it creates a pilot with maximum size of 64 cores. Then it submits to the pilot 128 tasks. These tasks will be executed in parallel in the available cores. As soon as the tasks are executed the pilot starts to shutdown. At the end you will how long it took for the whole script to execute. Note that the time reported is dependent of your machine. As a result, differences in the reported time are expected. If you look at your home folder you will see a folder named "radical.pilot.sandbox" and in there another folder named "[session]-pilot.0000". In that pilot folder, you will find 128 folder named "unit.000000" up to "unit.000127". These unit folders are the tasks that were actually executed. Go in one of them and check the STDOUT file. It should contain today's date.
   </div>
 </div>
 </div>
