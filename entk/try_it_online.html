@@ -200,8 +200,8 @@ function myTimeout10() {
 </div>
 </div>
 
-	<button onclick="execute1()">Execute</button>
-	<div class="output_wrapper" id="output1"></div>
+<button onclick="execute1()">Execute</button>
+<div class="output_wrapper" id="output1"></div>
 </div>
 
 
@@ -221,18 +221,18 @@ function myTimeout10() {
 <div class="input"><div class="inner_cell"><div class="input_area"><div class=" highlight hl-ipython2"><pre>
 <span class="kn">class MyApp(PoE):</span>
 	<span class="kn">def __init__(self, stages,instances):</span>
-		<span class="kn">BagofTasks.__init__(self, stages,instances)</span>
-	<span class="kn">cores=1,</span>
-					<span class="kn">walltime=15,</span>
-					<span class="kn">database_url='mongodb://entk_user:entk_user@ds029224.mlab.com:29224/entk_doc',</span>
-					<span class="kn">cluster.allocate()</span>
-				</pre></div>
-			</div>
-		</div>
-	</div>
+		<span class="kn">PoE.__init__(self, stages,instances)</span>
+	<span class="kn">def stage_1(self, instance):</span>
+		<span class="kn">k = Kernel(name="misc.hello")</span>
+		<span class="kn">k.arguments = ["--file=output.txt"]</span>
+		<span class="kn">k.download_output_data = ['./temp.txt > output_file.txt']</span>
+</pre></div>
+</div>
+</div>
+</div>
 
-	<button onclick="execute2()">Execute</button>
-	<div class="output_wrapper" id="output2"></div>
+<button onclick="execute2()">Execute</button>
+<div class="output_wrapper" id="output2"></div>
 </div>
 
 
