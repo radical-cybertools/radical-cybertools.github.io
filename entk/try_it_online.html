@@ -181,7 +181,6 @@ function myTimeout10() {
 <h1 id="RADICAL-Pilot-Tutorial">Ensemble Toolkit Try it Online<a class="anchor-link" href="#RADICAL-Pilot-Tutorial"></a></h1><p>The example below will take you through a simple "Hello World" script.</p>
 <p><strong>Please make sure to go through all the code blocks. </strong></p>
 <h2 id="1-Ensemble-Toolkit-Setup">1. Ensemble Toolkit Setup<a class="anchor-link" href="#1-Ensemble-Toolkit-Setup"></a></h2>
-<p><a href="http://radicalensemblemd.readthedocs.io/en/latest/">Documentation</a></p>
 
 <p>First, we import all necessary modules</p>
 
@@ -195,7 +194,8 @@ function myTimeout10() {
 <div class=" highlight hl-ipython2"><pre>
 <span class="kn">from radical.ensemblemd import Kernel, BagofTasks, EnsemblemdError, SingleClusterEnvironment</span> 
 
-<span class="o"></span>radicalpilot-version
+<span class="o"></span>import radical.ensemblemd as re
+print re.version
 </pre></div>
 
 </div>
