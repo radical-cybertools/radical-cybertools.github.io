@@ -26,7 +26,7 @@
 		<div class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
-					<a href="./index.html" class="navbar-brand">Ensemble Toolkit</a>
+					<a href="../index.html" class="navbar-brand">RADICAL Cybertools</a>
 					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -34,24 +34,25 @@
 					</button>
 				</div>
 				<div class="navbar-collapse collapse" id="navbar-main">
-					<ul class="nav navbar-nav">
-						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Getting Started <span class="caret"></span></a>
-							<ul class="dropdown-menu" aria-labelledby="themes">
-								<li><a href="./try_it_online.html">Try it Online</a></li>
-								<li><a href="./quick_start.html">Quick Start</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="http://radical.rutgers.edu/publications/">Publications</a>
-						</li>
-					</ul>
+          				<ul class="nav navbar-nav">
+            				<li class="dropdown">
+              				<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Tools <span class="caret"></span></a>
+              				<ul class="dropdown-menu" aria-labelledby="themes">
+                					<li><a href="./saga-python/index.html">RADICAL-SAGA</a></li>
+                					<li><a href="./radical-pilot/index.html">RADICAL-Pilot</a></li>
+                					<li><a href="./index.html">Ensemble Toolkit</a></li>
+              				</ul>
+            				</li>
+            				<li>
+              				<a href="http://radical.rutgers.edu/publications/">Publications</a>
+            				</li>
+          				</ul>
 
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="http://radical.rutgers.edu/shantenu">Contact</a></li>
-					</ul>
+          				<ul class="nav navbar-nav navbar-right">
+            					<li><a href="http://radical.rutgers.edu/shantenu">Contact</a></li>
+          				</ul>
 
-				</div>
+        				</div>
 			</div>
 		</div>
 
@@ -67,7 +68,7 @@
 <div class="sectionbody">
 <ul>
 <li><div class="paragraph"><p>python (>=2.7)</p></div></li>
-<li><div class="paragraph"><p><a href="https://virtualenv.pypa.io/en/stable/installation/">python virtualenv</a>.</p></div></li>
+<li><div class="paragraph"><p><a href="https://virtualenv.pypa.io/en/stable/installation/">Virtualenv</a>.</p></div></li>
 </div>
 </div>
 
@@ -77,11 +78,9 @@
 <div class="paragraph"><p>Create a new virtual environment and install using </p></div>
 <div class="content">
 <pre>
-	<code>
-			$ virtualenv myenv
-			$ source myenv/bin/activate
-			(myenv)$ pip install radical.ensemblemd
-	</code>
+<code>$ virtualenv myenv
+$ source myenv/bin/activate
+(myenv)$ pip install radical.ensemblemd</code>
 </pre>
 </div>
 <div class="paragraph"><p>The latest stable Ensemble Toolkit release is 0.4.5</p></div>
@@ -96,10 +95,8 @@ Pipeline of Ensembles where each ensemble consists of tasks which perform a chec
 to download and launch the script.</p></div>
 <div class="content">
 <pre>
-	<code>
-		$ wget https://raw.githubusercontent.com/radical-cybertools/radical.ensemblemd/master/examples/pipeline_of_ensembles.py
-		$ RADICAL_ENTK_VERBOSE=REPORT python pipeline_of_ensembles.py
-	</code>
+<code>$ wget https://raw.githubusercontent.com/radical-cybertools/radical.ensemblemd/master/examples/pipeline_of_ensembles.py
+$ RADICAL_ENTK_VERBOSE=REPORT python pipeline_of_ensembles.py</code>
 </pre>
 </div>
 <div class="paragraph"><p>When you run this application, it should print the following output</p></div>
