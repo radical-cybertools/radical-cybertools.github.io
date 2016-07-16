@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Ensemble Toolkit</title>
+
+		<!-- Bootstrap -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/simplex-theme.min.css" rel="stylesheet">
+		<link href="../css/jumbotron.css" rel="stylesheet">
+		<link href="../css/stickyfooter.css" rel="stylesheet">
+		<link href="../css/main.css" rel="stylesheet">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="../index.html" class="navbar-brand">RADICAL Cybertools</a>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar-main">
+          				<ul class="nav navbar-nav">
+            				<li class="dropdown">
+              				<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Tools <span class="caret"></span></a>
+              				<ul class="dropdown-menu" aria-labelledby="themes">
+                					<li><a href="./saga-python/index.html">RADICAL-SAGA</a></li>
+                					<li><a href="./radical-pilot/index.html">RADICAL-Pilot</a></li>
+                					<li><a href="./index.html">Ensemble Toolkit</a></li>
+              				</ul>
+            				</li>
+            				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Quick Links <span class="caret"></span></a>
+              				<ul class="dropdown-menu" aria-labelledby="themes">
+                					<li><a href="./try_it_online.html">Try It Online!</a></li>
+                					<li><a href="./quick_start.html">Quick Start</a></li>
+                					<li><a href="./index.html">More Info</a></li>
+                					<li><a href="http://radicalensemblemd.readthedocs.io/en/latest/">Documentation</a></li>
+                					<li><a href="https://github.com/radical-cybertools/radical.ensemblemd">Github Project</a></li>
+              				</ul>
+				</li>
+            				<li>
+              				<a href="http://radical.rutgers.edu/publications/">Publications</a>
+            				</li>
+          				</ul>
+
+          				<ul class="nav navbar-nav navbar-right">
+            					<li><a href="http://radical.rutgers.edu/shantenu">Contact</a></li>
+          				</ul>
+
+        				</div>
+			</div>
+		</div>
+
+
+		<!-- Begin page content -->
+<script>
+var Executed = 0;
+function execute1(){    
+		document.getElementById("output1").innerHTML = '';
+		setTimeout(myTimeout1, (Math.random()*1000)) 
+}
+function myTimeout1() {
+	document.getElementById("output1").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>0.4.5</pre></div></div></div>';
+}
+
+function execute2(){
+		document.getElementById("output2").innerHTML = '';
+		setTimeout(myTimeout2, (Math.random()*1000))
+
+}
+function myTimeout2() {
+	document.getElementById("output2").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>================================================================================<br> EnsembleMD (0.4.5)<br>================================================================================<br>Starting Allocation                                                           ok</pre></div></div></div>';
+		Executed=1;
+}
+
+function execute3(){
+		document.getElementById("output3").innerHTML = '';
+	if (Executed > 0){
+			setTimeout(myTimeout3a, (Math.random()*1000))
+			setTimeout(myTimeout3b, (Math.random()*3000))
+			setTimeout(myTimeout3c, (Math.random()*3000))
+		}
+		else{
+			document.getElementById("output3").innerHTML='<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Please execute previous Shells</pre></div></div></div>';
+		}
+	
+}
+function myTimeout3a() {
+	document.getElementById("output3").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Verifying pattern                                                             ok<br>Starting pattern execution                                                    ok<br> --------------------------------------------------------------------------------<br>Executing 1 instances of 1 stages on 1 allocated core(s) on &aposlocalhost&apos<br>Job waiting on queue...</pre></div></div></div>';
+	Executed = 2;
+}
+function myTimeout3b() {
+	document.getElementById("output3").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Verifying pattern                                                             ok<br>Starting pattern execution                                                    ok<br> --------------------------------------------------------------------------------<br>Executing 1 instances of 1 stages on 1 allocated core(s) on &aposlocalhost&apos<br>Job waiting on queue...<br>Job is now running !<br>Waiting for stage_1 to complete.</pre></div></div></div>';
+		Executed = 2;
+}
+function myTimeout3c() {
+	document.getElementById("output3").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Verifying pattern                                                             ok<br>Starting pattern execution                                                    ok<br> --------------------------------------------------------------------------------<br>Executing 1 instances of 1 stages on 1 allocated core(s) on &aposlocalhost&apos<br>Job waiting on queue...<br>Job is now running !<br>Waiting for stage_1 to complete.                                            done<br>--------------------------------------------------------------------------------<br>Pattern execution successfully finished</pre></div></div></div>';
+		Executed = 2;
+}
+
+
+function execute4(){ 
+		document.getElementById("output4").innerHTML = '';
+		if (Executed > 1){
+				setTimeout(myTimeout4a, (Math.random()*1000)) 
+				setTimeout(myTimeout4b, (Math.random()*1000)) 
+			}
+		else{
+			document.getElementById("output4").innerHTML='<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Please execute previous Shells</pre></div></div></div>';
+		}
+}
+
+function myTimeout4a() {
+	document.getElementById("output4").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Starting Deallocation..<br></pre></div></div></div>';
+		Executed = 3;
+}
+
+function myTimeout4b() {
+	document.getElementById("output4").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Starting Deallocation..<br>Resource allocation cancelled.                                              done</pre></div></div></div>';
+		Executed = 3;
+}
+
+function execute5(){ 
+		document.getElementById("output5").innerHTML = '';
+		if (Executed > 2){
+				setTimeout(myTimeout5, (Math.random()*1000)) 
+			}
+		else{
+			document.getElementById("output5").innerHTML='<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Please execute previous Shells</pre></div></div></div>';
+		}
+}
+
+function myTimeout5() {
+	document.getElementById("output5").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Welcome!<br>Hello World</pre></div></div></div>';
+		Executed = 4;
+}
+
+</script>
+
+<div class="container">
+ <div tabindex="-1" id="notebook" class="border-box-sizing">
+		<div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="RADICAL-Pilot-Tutorial">Ensemble Toolkit Try it Online<a class="anchor-link" href="#RADICAL-Pilot-Tutorial"></a></h1><p>The example below will take you through a simple "Hello World" script.</p>
+<p><strong>Please make sure to go through all the code blocks. </strong></p>
+<h2 id="1-Ensemble-Toolkit-Setup">1. Ensemble Toolkit Setup<a class="anchor-link" href="#1-Ensemble-Toolkit-Setup"></a></h2>
+
+<p>First, we import all necessary modules</p>
+
+</div>
+</div>
+</div>
+
+
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"><div class="inner_cell"><div class="input_area"><div class=" highlight hl-ipython2"><pre>
+<span class="kn">from radical.ensemblemd import Kernel, PoE, EnsemblemdError, ResourceHandle</span>
+<span class="kn">import radical.ensemblemd as re</span> 
+<span class="kn">print re.version</span> 
+</pre></div>	
+</div>
+</div>
+</div>
+
+<button onclick="execute1()">Execute</button>
+<div class="output_wrapper" id="output1"></div>
+</div>
+
+
+<div class="cell border-box-sizing text_cell rendered">
+	<div class="prompt input_prompt">
+	</div>
+	<div class="inner_cell">
+		<div class="text_cell_render border-box-sizing rendered_html">
+			<h2 id="2.-Local-Example">2. Local Example<a class="anchor-link" href="#2.-Local-Example"></a></h2>
+			<p>This example shows how to execute a task that writes "Hello World" to a file and download the file using Ensemble toolkit components.</p>
+			<h3 id="2.1-Create-a-new-execution-pattern-class">2.1 Create a new Execution Pattern class<a class="anchor-link" href="#2.1-Create-a-new-Execution-Pattern-class"></a></h3>
+		</div>
+	</div>
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"><div class="inner_cell"><div class="input_area"><div class=" highlight hl-ipython2"><pre>
+<span class="kn">class MyApp(PoE):</span>
+	<span class="kn">def __init__(self, stages,instances):</span>
+		<span class="kn">PoE.__init__(self, stages,instances)</span>
+	<span class="kn">def stage_1(self, instance):</span>
+		<span class="kn">k = Kernel(name="misc.hello")</span>
+		<span class="kn">k.arguments = ["--file=output.txt"]</span>
+		<span class="kn">k.download_output_data = ['./temp.txt > output_file.txt']</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.2-Submit-Pilot-and-add-to-Unit-Manager">2.2 Create a Resource Handle<a class="anchor-link" href="#2.2-Submit-Pilot-and-add-to-Unit-Manager"></a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"><div class="inner_cell"><div class="input_area"><div class=" highlight hl-ipython2"><pre>
+<span class="kn">cluster = ResourceHandle(</span>
+	<span class="kn">resource="localhost",</span>
+	<span class="kn">cores=1,</span>
+	<span class="kn">walltime=10,</span>
+	<span class="kn">database_url='mongodb://rp:rp@ds015335.mlab.com:15335/rp')</span>
+<span class="kn">cluster.allocate()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<button onclick="execute2()">Execute</button>
+<div class="output_wrapper" id="output2"></div>
+</div>
+
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.3-Submit-Compute-Units">2.3 Run the workload<a class="anchor-link" href="#2.3-Submit-Compute-Units"></a></h3>
+
+</div>
+</div>
+</div>
+
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"><div class="inner_cell"><div class="input_area"><div class=" highlight hl-ipython2"><pre>
+<span class="kn">cluster.run(app)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<button onclick="execute3()">Execute</button>
+<div class="output_wrapper" id="output3"></div>
+</div>
+
+
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.6-Close-and-Delete-Session">2.4 Deallocate resources<a class="anchor-link" href="#2.6-Close-and-Delete-Session"></a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"><div class="inner_cell"><div class="input_area"><div class=" highlight hl-ipython2"><pre>
+<span class="kn">cluster.deallocate()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<button onclick="execute4()">Execute</button>
+<div class="output_wrapper" id="output4"></div>
+
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.6-Close-and-Delete-Session">2.5 See downloaded file content<a class="anchor-link" href="#2.6-Close-and-Delete-Session"></a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"><div class="inner_cell"><div class="input_area"><div class=" highlight hl-ipython2"><pre>
+<span class="kn">$ cat output_file.txt</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<button onclick="execute5()">Execute</button>
+<div class="output_wrapper" id="output5"></div>
+
+</div>
+
+
+<div id="footer">
+	<div class="container">
+			<p align="center">Copyright &copy; 2016 <a href="http://radical.rutgers.edu">RADICAL Research</a> at 
+					<a href="http://www.rutgers.edu">
+					Rutgers University </a></p>
+			</div>
+		</div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/smoothscroll.js"></script>
+	</body>
+</html>
