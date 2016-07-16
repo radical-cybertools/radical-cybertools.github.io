@@ -125,6 +125,21 @@ function myTimeout6() {
 		Executed = 3;
 }
 
+function execute5(){ 
+		document.getElementById("output5").innerHTML = '';
+		if (Executed > 2){
+				setTimeout(myTimeout7, (Math.random()*1000)) 
+			}
+		else{
+			document.getElementById("output5").innerHTML='<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Please execute previous Shells</pre></div></div></div>';
+		}
+}
+
+function myTimeout7() {
+	document.getElementById("output5").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Welcome!<br>Hello World</pre></div></div></div>';
+		Executed = 4;
+}
+
 </script>
 
 <div class="container">
@@ -265,6 +280,29 @@ function myTimeout6() {
 
 <button onclick="execute4()">Execute</button>
 <div class="output_wrapper" id="output4"></div>
+
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.6-Close-and-Delete-Session">2.5 See downloaded file content<a class="anchor-link" href="#2.6-Close-and-Delete-Session"></a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"><div class="inner_cell"><div class="input_area"><div class=" highlight hl-ipython2"><pre>
+<span class="kn">$ cat output_file.txt</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<button onclick="execute5()">Execute</button>
+<div class="output_wrapper" id="output5"></div>
 
 </div>
 
