@@ -91,8 +91,8 @@ function execute3(){
 		document.getElementById("output3").innerHTML = '';
 	if (Executed > 0){
 			setTimeout(myTimeout3a, (Math.random()*1000))
-			setTimeout(myTimeout3b, (Math.random()*3000))
-			setTimeout(myTimeout3c, (Math.random()*3000))
+			setTimeout(myTimeout3b, (1000+Math.random()*1000))
+			setTimeout(myTimeout3c, (2000+Math.random()*1000))
 		}
 		else{
 			document.getElementById("output3").innerHTML='<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Please execute previous Shells</pre></div></div></div>';
@@ -117,7 +117,7 @@ function execute4(){
 		document.getElementById("output4").innerHTML = '';
 		if (Executed > 1){
 				setTimeout(myTimeout4a, (Math.random()*1000)) 
-				setTimeout(myTimeout4b, (Math.random()*1000)) 
+				setTimeout(myTimeout4b, (1000+Math.random()*1000)) 
 			}
 		else{
 			document.getElementById("output4").innerHTML='<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Please execute previous Shells</pre></div></div></div>';
