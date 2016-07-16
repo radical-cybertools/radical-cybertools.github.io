@@ -231,55 +231,33 @@ function myTimeout10() {
 </div>
 </div>
 
-<button onclick="execute2()">Execute</button>
-<div class="output_wrapper" id="output2"></div>
-</div>
 
-
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="inner_cell">
-		<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">print_details</span><span class="p">(</span><span class="n">umgr</span><span class="o">.</span><span class="n">as_dict</span><span class="p">())</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<button onclick="execute3()">Execute</button>
-
-<div class="output_wrapper" id="output3">
-
-</div>
-
-
-</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.2-Submit-Pilot-and-add-to-Unit-Manager">2.2 Submit Pilot and add to Unit Manager<a class="anchor-link" href="#2.2-Submit-Pilot-and-add-to-Unit-Manager"></a></h3>
+<h3 id="2.2-Submit-Pilot-and-add-to-Unit-Manager">2.2 Create a Resource Handle<a class="anchor-link" href="#2.2-Submit-Pilot-and-add-to-Unit-Manager"></a></h3>
 </div>
 </div>
 </div>
+
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="inner_cell">
-		<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pdesc</span> <span class="o">=</span> <span class="n">rp</span><span class="o">.</span><span class="n">ComputePilotDescription</span><span class="p">()</span>
-<span class="n">pdesc</span><span class="o">.</span><span class="n">resource</span> <span class="o">=</span> <span class="s2">&quot;local.localhost&quot;</span>  <span class="c1"># NOTE: This is a &quot;label&quot;, not a hostname</span>
-<span class="n">pdesc</span><span class="o">.</span><span class="n">runtime</span>  <span class="o">=</span> <span class="mi">10</span> <span class="c1"># minutes</span>
-<span class="n">pdesc</span><span class="o">.</span><span class="n">cores</span>    <span class="o">=</span> <span class="mi">2</span>
-<span class="n">pdesc</span><span class="o">.</span><span class="n">cleanup</span>  <span class="o">=</span> <span class="bp">True</span>
-<span class="n">pilot</span> <span class="o">=</span> <span class="n">pmgr</span><span class="o">.</span><span class="n">submit_pilots</span><span class="p">(</span><span class="n">pdesc</span><span class="p">)</span>
-<span class="n">umgr</span><span class="o">.</span><span class="n">add_pilots</span><span class="p">(</span><span class="n">pilot</span><span class="p">)</span>
+<div class="input"><div class="inner_cell"><div class="input_area"><div class=" highlight hl-ipython2"><pre>
+<span class="kn">cluster = ResourceHandle(</span>
+	<span class="kn">resource="localhost",</span>
+	<span class="kn">cores=1,</span>
+	<span class="kn">walltime=10,</span>
+	<span class="kn">database_url='mongodb://rp:rp@ds015335.mlab.com:15335/rp')</span>
+<span class="kn">cluster.allocate()</span>
 </pre></div>
 
 </div>
 </div>
+</div>
+
+<button onclick="execute2()">Execute</button>
+<div class="output_wrapper" id="output2"></div>
 </div>
 
 </div>
