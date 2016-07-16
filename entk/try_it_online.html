@@ -191,17 +191,14 @@ function myTimeout10() {
 
 
 <div class="cell border-box-sizing code_cell rendered">
-	<div class="input">
-		<div class="inner_cell">
-			<div class="input_area">
-				<div class=" highlight hl-ipython2"><pre>
-					<span class="kn">from radical.ensemblemd import Kernel, PoE, EnsemblemdError, ResourceHandle</span>
-					<span class="kn">import radical.ensemblemd as re</span> 
-					<span class="kn">print re.version</span> 
-				</pre></div>	
-			</div>
-		</div>
-	</div>
+<div class="input"><div class="inner_cell"><div class="input_area"><div class=" highlight hl-ipython2"><pre>
+<span class="kn">from radical.ensemblemd import Kernel, PoE, EnsemblemdError, ResourceHandle</span>
+<span class="kn">import radical.ensemblemd as re</span> 
+<span class="kn">print re.version</span> 
+</pre></div>	
+</div>
+</div>
+</div>
 
 	<button onclick="execute1()">Execute</button>
 	<div class="output_wrapper" id="output1"></div>
@@ -221,14 +218,11 @@ function myTimeout10() {
 </div>
 
 <div class="cell border-box-sizing code_cell rendered">
-	<div class="input">
-		<div class="inner_cell">
-			<div class="input_area">
-				<div class=" highlight hl-ipython2"><pre>
-					<span class="kn">class MyApp(PoE):</span>
-					<span class="kn">cluster = ResourceHandle(</span>
-					<span class="kn">resource="localhost",</span>
-					<span class="kn">cores=1,</span>
+<div class="input"><div class="inner_cell"><div class="input_area"><div class=" highlight hl-ipython2"><pre>
+<span class="kn">class MyApp(PoE):</span>
+	<span class="kn">def __init__(self, stages,instances):</span>
+		<span class="kn">BagofTasks.__init__(self, stages,instances)</span>
+	<span class="kn">cores=1,</span>
 					<span class="kn">walltime=15,</span>
 					<span class="kn">database_url='mongodb://entk_user:entk_user@ds029224.mlab.com:29224/entk_doc',</span>
 					<span class="kn">cluster.allocate()</span>
