@@ -81,24 +81,24 @@ function myTimeout2() {
 function execute3(){
 		document.getElementById("output3").innerHTML = '';
 	if (Executed > 0){
-			setTimeout(myTimeout3, (Math.random()*1000))
-			setTimeout(myTimeout4, (Math.random()*3000))
-			setTimeout(myTimeout5, (Math.random()*3000))
+			setTimeout(myTimeout3a, (Math.random()*1000))
+			setTimeout(myTimeout3b, (Math.random()*3000))
+			setTimeout(myTimeout3c, (Math.random()*3000))
 		}
 		else{
 			document.getElementById("output3").innerHTML='<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Please execute previous Shells</pre></div></div></div>';
 		}
 	
 }
-function myTimeout3() {
+function myTimeout3a() {
 	document.getElementById("output3").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Verifying pattern                                                             ok<br>Starting pattern execution                                                    ok<br> --------------------------------------------------------------------------------<br>Executing 1 instances of 1 stages on 1 allocated core(s) on &aposlocalhost&apos<br>Job waiting on queue...</pre></div></div></div>';
 	Executed = 2;
 }
-function myTimeout4() {
+function myTimeout3b() {
 	document.getElementById("output3").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Verifying pattern                                                             ok<br>Starting pattern execution                                                    ok<br> --------------------------------------------------------------------------------<br>Executing 1 instances of 1 stages on 1 allocated core(s) on &aposlocalhost&apos<br>Job waiting on queue...<br>Job is now running !<br>Waiting for stage_1 to complete.</pre></div></div></div>';
 		Executed = 2;
 }
-function myTimeout4() {
+function myTimeout3c() {
 	document.getElementById("output3").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Verifying pattern                                                             ok<br>Starting pattern execution                                                    ok<br> --------------------------------------------------------------------------------<br>Executing 1 instances of 1 stages on 1 allocated core(s) on &aposlocalhost&apos<br>Job waiting on queue...<br>Job is now running !<br>Waiting for stage_1 to complete.                                            done<br>--------------------------------------------------------------------------------<br>Pattern execution successfully finished</pre></div></div></div>';
 		Executed = 2;
 }
@@ -107,20 +107,20 @@ function myTimeout4() {
 function execute4(){ 
 		document.getElementById("output4").innerHTML = '';
 		if (Executed > 1){
-				setTimeout(myTimeout5, (Math.random()*1000)) 
-				setTimeout(myTimeout6, (Math.random()*1000)) 
+				setTimeout(myTimeout4a, (Math.random()*1000)) 
+				setTimeout(myTimeout4b, (Math.random()*1000)) 
 			}
 		else{
 			document.getElementById("output4").innerHTML='<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Please execute previous Shells</pre></div></div></div>';
 		}
 }
 
-function myTimeout5() {
+function myTimeout4a() {
 	document.getElementById("output4").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Starting Deallocation..<br></pre></div></div></div>';
 		Executed = 3;
 }
 
-function myTimeout6() {
+function myTimeout4b() {
 	document.getElementById("output4").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Starting Deallocation..<br>Resource allocation cancelled.                                              done</pre></div></div></div>';
 		Executed = 3;
 }
@@ -128,14 +128,14 @@ function myTimeout6() {
 function execute5(){ 
 		document.getElementById("output5").innerHTML = '';
 		if (Executed > 2){
-				setTimeout(myTimeout7, (Math.random()*1000)) 
+				setTimeout(myTimeout5, (Math.random()*1000)) 
 			}
 		else{
 			document.getElementById("output5").innerHTML='<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Please execute previous Shells</pre></div></div></div>';
 		}
 }
 
-function myTimeout7() {
+function myTimeout5() {
 	document.getElementById("output5").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Welcome!<br>Hello World</pre></div></div></div>';
 		Executed = 4;
 }
