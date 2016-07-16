@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Ensemble Toolkit</title>
+
+		<!-- Bootstrap -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/simplex-theme.min.css" rel="stylesheet">
+		<link href="../css/jumbotron.css" rel="stylesheet">
+		<link href="../css/stickyfooter.css" rel="stylesheet">
+		<link href="../css/main.css" rel="stylesheet">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="../index.html" class="navbar-brand">RADICAL Cybertools</a>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar-main">
+          				<ul class="nav navbar-nav">
+            				<li class="dropdown">
+              				<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Tools <span class="caret"></span></a>
+              				<ul class="dropdown-menu" aria-labelledby="themes">
+                					<li><a href="../saga-python/index.html">RADICAL-SAGA</a></li>
+                					<li><a href="../radical-pilot/index.html">RADICAL-Pilot</a></li>
+                					<li><a href="./index.html">Ensemble Toolkit</a></li>
+              				</ul>
+            				</li>
+            				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Quick Links <span class="caret"></span></a>
+              				<ul class="dropdown-menu" aria-labelledby="themes">
+                					<li><a href="./try_it_online.html">Try It Online!</a></li>
+                					<li><a href="./quick_start.html">Quick Start</a></li>
+                					<li><a href="./index.html">More Info</a></li>
+                					<li><a href="http://radicalensemblemd.readthedocs.io/en/latest/">Documentation</a></li>
+                					<li><a href="https://github.com/radical-cybertools/radical.ensemblemd">Github Project</a></li>
+              				</ul>
+				</li>
+            				<li>
+              				<a href="http://radical.rutgers.edu/publications/">Publications</a>
+            				</li>
+          				</ul>
+
+          				<ul class="nav navbar-nav navbar-right">
+            					<li><a href="http://radical.rutgers.edu/shantenu">Contact</a></li>
+          				</ul>
+
+        				</div>
+			</div>
+		</div>
+
+
+		<!-- Begin page content -->
+<div class="container">
+	<h1>Ensemble Toolkit Quick Start Guide</h1>
+		<p></p>
+	</div>
+	<div id="content">
+<div class="container">
+<h2 id="_get_ve">Requirements</h2>
+<div class="sectionbody">
+<ul>
+<li><div class="paragraph"><p>python (>=2.7)</p></div></li>
+<li><div class="paragraph"><p><a href="https://virtualenv.pypa.io/en/stable/installation/">Virtualenv</a>.</p></div></li>
+</div>
+</div>
+
+<div class="container">
+<h2 id="_get_rp">Installing Ensemble Toolkit</h2>
+<div class="container">
+<div class="paragraph"><p>Create a new virtual environment and install using </p></div>
+<div class="content">
+<pre>
+<code>$ virtualenv myenv
+$ source myenv/bin/activate
+(myenv)$ pip install radical.ensemblemd</code>
+</pre>
+</div>
+<div class="paragraph"><p>The latest stable Ensemble Toolkit release is 0.4.5</p></div>
+</div>
+</div>
+
+<div class="container">
+<h2 id="_run_rp">Run Ensemble Toolkit</h2>
+<div class="container">
+<div class="paragraph"><p>We present here an example script that uses ensemble toolkit components to submit a 
+Pipeline of Ensembles where each ensemble consists of tasks which perform a checksum on some given data. Run the following commands
+to download and launch the script.</p></div>
+<div class="content">
+<pre>
+<code>$ wget https://raw.githubusercontent.com/radical-cybertools/radical.ensemblemd/master/examples/pipeline_of_ensembles.py
+$ RADICAL_ENTK_VERBOSE=REPORT python pipeline_of_ensembles.py</code>
+</pre>
+</div>
+<div class="paragraph"><p>When you run this application, it should print the following output</p></div>
+</div>
+<div class="container">
+<div class="content">
+<pre>
+	<code>
+================================================================================
+ EnsembleMD (0.4.3-1-gdc346cd)                                                  
+================================================================================
+
+Starting Allocation                                                           ok
+Verifying pattern                                                             ok
+Starting pattern execution                                                    ok
+--------------------------------------------------------------------------------
+Executing 16 instances of 1 stages on 1 allocated core(s) on 'localhost'        
+
+Job waiting on queue...
+Job is now running !
+Waiting for stage_1 to complete.                                            done
+--------------------------------------------------------------------------------
+Pattern execution successfully finished                                         
+
+
+Resulting checksums:
+  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
+  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
+  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
+  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
+  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
+  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
+  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
+  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
+  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
+  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
+  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
+  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
+  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
+  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
+  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
+  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
+
+Starting Deallocation..
+Resource allocation cancelled.                                              done
+
+--------------------------------------------------------------------------------
+</code></pre></div></div>
+<div class="container">
+	<div class="paragraph">
+		This example was to give you a quick glimpse of the interface and the execution procedure. Please see the other 
+		examples in the documentation.
+	</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+		<div id="footer">
+			<div class="container">
+				<p align="center">Copyright &copy; 2016 <a href="http://radical.rutgers.edu">RADICAL Research</a> at 
+					<a href="http://www.rutgers.edu">
+					Rutgers University </a></p>
+			</div>
+		</div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/smoothscroll.js"></script>
+	</body>
+</html>

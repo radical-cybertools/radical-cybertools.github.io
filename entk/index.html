@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Ensemble Toolkit</title>
+
+		<!-- Bootstrap -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/simplex-theme.min.css" rel="stylesheet">
+		<link href="../css/jumbotron.css" rel="stylesheet">
+		<link href="../css/stickyfooter.css" rel="stylesheet">
+		<link href="../css/main.css" rel="stylesheet">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="../index.html" class="navbar-brand">RADICAL Cybertools</a>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar-main">
+          				<ul class="nav navbar-nav">
+            				<li class="dropdown">
+              				<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Tools <span class="caret"></span></a>
+              				<ul class="dropdown-menu" aria-labelledby="themes">
+                					<li><a href="../saga-python/index.html">RADICAL-SAGA</a></li>
+                					<li><a href="../radical-pilot/index.html">RADICAL-Pilot</a></li>
+                					<li><a href="./index.html">Ensemble Toolkit</a></li>
+              				</ul>
+            				</li>
+            				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Quick Links <span class="caret"></span></a>
+              				<ul class="dropdown-menu" aria-labelledby="themes">
+                					<li><a href="./try_it_online.html">Try It Online!</a></li>
+                					<li><a href="./quick_start.html">Quick Start</a></li>
+                					<li><a href="./index.html">More Info</a></li>
+                					<li><a href="http://radicalensemblemd.readthedocs.io/en/latest/">Documentation</a></li>
+                					<li><a href="https://github.com/radical-cybertools/radical.ensemblemd">Github Project</a></li>
+              				</ul>
+				</li>
+            				<li>
+              				<a href="http://radical.rutgers.edu/publications/">Publications</a>
+            				</li>
+          				</ul>
+
+          				<ul class="nav navbar-nav navbar-right">
+            					<li><a href="http://radical.rutgers.edu/shantenu">Contact</a></li>
+          				</ul>
+
+        				</div>
+			</div>
+		</div>
+
+
+		<!-- ========== -->
+<div class="jumbotron">
+	<div class="container">
+	<h1>Ensemble Toolkit</h1>
+		<p></p>
+	</div>
+</div>
+		<div class="container">
+	
+						<p class="infoblurb" align="justify">
+
+							Ensemble toolkit provides building blocks to compose ensemble-based applications and execute on high performance computing 
+							systems. The responsibilities of the user are constrained to defining (i) <b>"what"</b> needs to be executed and (ii) <b><b>"when" </b> they need to 
+							be executed (relative order). Ensemble toolkit takes charge on the complexities of <b>"where"</b> and <b>"how"</b> the workload is executed. 
+							Ensemble toolkit uses a scalable pilot-based runtime system that decouples workload execution and resource management 
+							details from the expression of the application, and enables the efficient and dynamic execution of ensembles on heterogeneous 
+							computing resources.
+						</p>
+
+						<p class="infoblurb"><a href=" https://groups.google.com/forum/#!forum/ensemblemd-users">Join the mailinglist</a>
+						</p>
+
+
+			<div class="container">
+
+<h2 class="section-heading">Ensemble Toolkit features</h2>
+<ul>
+<li><p class="infoblurb"><b><i>Support for common application patterns: </i></b> Provides parametrized templates that represent common synchronization and communication patterns. </p></li>
+
+<li><p class="infoblurb"><b><i>Kernel abstractions: </i></b> Task abstractions that hide tool specific peculiarities across different HPC systems.</p></li>
+
+<li><p class="infoblurb"><b><i>Interoperable: </i></b> Ensemble toolkit allows its users to submit tasks to a variety of HPC machines using only a single component.</p></li>
+
+<li><p class="infoblurb"><b><i>Scalable: </i></b> Capable of scheduling O(10k) tasks and marshalling O(10k) distributed cores. Ensemble toolkit is developed over RADICAL Pilot and its runtime performance features are seamlessly applicable to Ensemble toolkit</p></li>
+</ul>
+</div>
+
+<div class="container">
+	<h2 class="section-heading">Who is using Ensemble Toolkit ? </h2>
+	<ul>
+	<li><p class="infoblurb">Ensemble toolkit is being used by molecular dynamics researchers in the <a href="http://extasy.readthedocs.org/">ExTASY project.</a></p></li>
+
+	<li><p class="infoblurb">Researchers at Utah (Cheetham group) are using Ensemble toolkit to develop advanced adaptive workflows to simulate molecular behaviour of the Ebola virus</p></li>
+
+	<li><p class="infoblurb">Researchers at Penn State (Cervone group) are using Ensemble toolkit to run weather prediction models on HPC systems.</p></li>
+</div>
+
+
+Ensemble toolkit is supported by NSF ACI <a href="http://www.nsf.gov/awardsearch/showAward?AWD_ID=1440677"> 1440677 </a> and CHE <a href="http://www.nsf.gov/awardsearch/showAward?AWD_ID=1253644">1265788</a>. Contact <a href="http://radical.rutgers.edu/">RADICAL group members</a></li> for more information.</p>
+
+
+		<div id="footer">
+			<div class="container">
+				<p align="center">Copyright &copy; 2016 <a href="http://radical.rutgers.edu">RADICAL Research</a> at 
+					<a href="http://www.rutgers.edu">
+					Rutgers University </a></p>
+			</div>
+		</div>
+
+
+		<div id="footer">
+			<div class="container">
+				<p align="center">Copyright &copy; 2016 <a href="http://radical.rutgers.edu">RADICAL Research </a> at 
+					<a href="http://nsfcac.rutgers.edu">The Cloud and Autonomic Computing 
+					Center, Rutgers University </a></p>
+			</div>
+		</div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/smoothscroll.js"></script>
+	</body>
+</html>
