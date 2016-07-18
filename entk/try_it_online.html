@@ -193,7 +193,7 @@ function myTimeout5() {
 	<div class="inner_cell">
 		<div class="text_cell_render border-box-sizing rendered_html">
 			<h2 id="2.-Local-Example">2. Local Example<a class="anchor-link" href="#2.-Local-Example"></a></h2>
-			<p>This example shows how to execute a task that writes "Hello World" to a file and download the file using Ensemble toolkit components.</p>
+			<p>This example shows how to execute a task on your local machine that writes "Hello World" to a file and downloads the file using Ensemble toolkit components.</p>
 			<h3 id="2.1-Create-a-new-execution-pattern-class">2.1 Create a new Execution Pattern class<a class="anchor-link" href="#2.1-Create-a-new-Execution-Pattern-class"></a></h3>
 		</div>
 	</div>
@@ -226,12 +226,12 @@ function myTimeout5() {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input"><div class="inner_cell"><div class="input_area"><div class=" highlight hl-ipython2"><pre>
-<span class="kn">cluster = ResourceHandle(</span>
+<span class="kn">local_resource = ResourceHandle(</span>
 	<span class="kn">resource="localhost",</span>
 	<span class="kn">cores=1,</span>
 	<span class="kn">walltime=10,</span>
 	<span class="kn">database_url='mongodb://rp:rp@ds015335.mlab.com:15335/rp')</span>
-<span class="kn">cluster.allocate()</span>
+<span class="kn">local_resource.allocate()</span>
 </pre></div>
 
 </div>
@@ -256,7 +256,7 @@ function myTimeout5() {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input"><div class="inner_cell"><div class="input_area"><div class=" highlight hl-ipython2"><pre>
-<span class="kn">cluster.run(app)</span>
+<span class="kn">local_resource.run(app)</span>
 </pre></div>
 
 </div>
@@ -280,7 +280,7 @@ function myTimeout5() {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input"><div class="inner_cell"><div class="input_area"><div class=" highlight hl-ipython2"><pre>
-<span class="kn">cluster.deallocate()</span>
+<span class="kn">local_resource.deallocate()</span>
 </pre></div>
 
 </div>
