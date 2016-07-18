@@ -101,8 +101,7 @@ $ source myenv/bin/activate
 <h2 id="_run_rp">Run Ensemble Toolkit</h2>
 <div class="container">
 <div class="paragraph"><p>We present here an example script that uses ensemble toolkit components to submit a 
-Pipeline of Ensembles where each ensemble consists of tasks which perform a checksum on some given data. Run the following commands
-to download and launch the script.</p></div>
+bag of tasks where each task performs a checksum on a given data. Run the following commands to download and launch the script.</p></div>
 <div class="content">
 <pre>
 <code>$ wget https://raw.githubusercontent.com/radical-cybertools/radical-cybertools.github.io/master/entk/scripts/quick_start.py
@@ -157,8 +156,9 @@ Resource allocation cancelled.                                              done
 </code></pre></div></div>
 <div class="container">
 	<div class="paragraph">
-		This example was to give you a quick glimpse of the interface and the execution procedure. Please see the other 
-		examples in the documentation.
+		This example was to give you a quick glimpse of the interface and the execution procedure. To construct the bag of tasks workload, you use the Pipeline of Ensembles execution pattern (PoE) with the number of pipeline stages set to 1. The example runs locally on your machine where a file "UTF-8-demo.txt" is downloaded. Each task then performs a checksum on this file and the output is then presented at the end.
+
+		To look at other examples, please see the <a href="http://radicalensemblemd.readthedocs.io/en/latest/">documentation</a>
 	</div>
 </div>
 </div>
