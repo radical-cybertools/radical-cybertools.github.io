@@ -206,11 +206,11 @@ function myTimeout5() {
 	<span class="kn">def __init__(self, stages,instances):</span>
 		<span class="kn">PoE.__init__(self, stages,instances)</span>
 	<span class="kn">def stage_1(self, instance):</span>
-		<span class="kn">k = Kernel(name="misc.hello")</span>
-		<span class="kn">k.arguments = ["--file=output.txt"]</span>
-		<span class="kn">k.download_output_data = ['./temp.txt > output_file.txt']</span>
+		<span class="kn">k = Kernel(name="misc.hello")    # name of the kernel to be executed by each task</span>
+		<span class="kn">k.arguments = ["--file=temp.txt"]    # arguments to the kernel</span>
+		<span class="kn">k.download_output_data = ['./temp.txt > output_file.txt']    # download "temp.txt" as "output_file.txt"</span>
 
-<span class="kn">app=MyApp(stages=1, instances=1)</span>
+<span class="kn">app=MyApp(stages=1, instances=1)    # Create object of the execution pattern class</span>
 </pre></div>
 </div>
 </div>
@@ -231,9 +231,9 @@ function myTimeout5() {
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input"><div class="inner_cell"><div class="input_area"><div class=" highlight hl-ipython2"><pre>
 <span class="kn">local_resource = ResourceHandle(</span>
-	<span class="kn">resource="localhost",</span>
-	<span class="kn">cores=1,</span>
-	<span class="kn">walltime=10,</span>
+	<span class="kn">resource="localhost",    # name of the resource to be used</span>
+	<span class="kn">cores=1,    # number of cores to be requested</span>
+	<span class="kn">walltime=10,    # duration of resource request</span>
 	<span class="kn">database_url='mongodb://rp:rp@ds015335.mlab.com:15335/rp')</span>
 <span class="kn">local_resource.allocate()</span>
 </pre></div>
