@@ -46,7 +46,7 @@
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Quick Links <span class="caret"></span></a>
               				<ul class="dropdown-menu" aria-labelledby="themes">
                 					<li><a href="./basic_example.html">Basic Example</a></li>
-                					<li><a href="./quick_start.html">Quick Start</a></li>
+                					<li><a href="./quick_start.html">Getting Started</a></li>
                 					<li><a href="./index.html">More Info</a></li>
                 					<li><a href="http://radicalensemblemd.readthedocs.io/en/latest/">Documentation</a></li>
                 					<li><a href="https://github.com/radical-cybertools/radical.ensemblemd">Github Project</a></li>
@@ -74,7 +74,7 @@ function execute1(){
 		setTimeout(myTimeout1, (Math.random()*1000)) 
 }
 function myTimeout1() {
-	document.getElementById("output1").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>0.4.5</pre></div></div></div>';
+	document.getElementById("output1").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>0.4.6</pre></div></div></div>';
 }
 
 function execute2(){
@@ -83,7 +83,7 @@ function execute2(){
 
 }
 function myTimeout2() {
-	document.getElementById("output2").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>================================================================================<br> EnsembleMD (0.4.5)<br>================================================================================<br>Starting Allocation                                                           ok</pre></div></div></div>';
+	document.getElementById("output2").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>================================================================================<br> EnsembleMD (0.4.6)<br>================================================================================<br>Starting Allocation                                                           ok</pre></div></div></div>';
 		Executed=1;
 }
 
@@ -100,7 +100,7 @@ function execute3(){
 	
 }
 function myTimeout3a() {
-	document.getElementById("output3").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Verifying pattern                                                             ok<br>Starting pattern execution                                                    ok<br> --------------------------------------------------------------------------------<br>Executing 1 instances of 1 stages on 1 allocated core(s) on &aposlocalhost&apos<br>Job waiting on queue...</pre></div></div></div>';
+	document.getElementById("output3").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>Verifying pattern                                                             ok<br>Starting pattern execution                                                    ok<br> --------------------------------------------------------------------------------<br>Executing 1 instances of 1 stages on 1 allocated core(s) on "local.localhost<br>Job waiting on queue...</pre></div></div></div>';
 	Executed = 2;
 }
 function myTimeout3b() {
@@ -160,7 +160,7 @@ function myTimeout5() {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="RADICAL-Pilot-Tutorial">Ensemble Toolkit Try it Online<a class="anchor-link" href="#RADICAL-Pilot-Tutorial"></a></h1><p>The example below will take you through a simple "Hello World" script.</p>
+<h1 id="RADICAL-Pilot-Tutorial">Ensemble Toolkit Basic Example<a class="anchor-link" href="#RADICAL-Pilot-Tutorial"></a></h1><p>The example below will take you through a simple "Hello World" script.</p>
 <p><strong>Please make sure to go through all the code blocks. </strong></p>
 <h2 id="1-Ensemble-Toolkit-Setup">1. Ensemble Toolkit Setup<a class="anchor-link" href="#1-Ensemble-Toolkit-Setup"></a></h2>
 
@@ -206,11 +206,11 @@ function myTimeout5() {
 	<span class="kn">def __init__(self, stages,instances):</span>
 		<span class="kn">PoE.__init__(self, stages,instances)</span>
 	<span class="kn">def stage_1(self, instance):</span>
-		<span class="kn">k = Kernel(name="misc.hello")    # name of the kernel to be executed by each task</span>
-		<span class="kn">k.arguments = ["--file=temp.txt"]    # arguments to the kernel</span>
-		<span class="kn">k.download_output_data = ['./temp.txt > output_file.txt']    # download "temp.txt" as "output_file.txt"</span>
+		<span class="kn">k = Kernel(name="misc.hello")    				# name of the kernel to be executed by each task</span>
+		<span class="kn">k.arguments = ["--file=temp.txt"]    				# arguments to the kernel</span>
+		<span class="kn">k.download_output_data = ['./temp.txt > output_file.txt']    	# download "temp.txt" as "output_file.txt"</span>
 
-<span class="kn">app=MyApp(stages=1, instances=1)    # Create object of the execution pattern class</span>
+<span class="kn">app=MyApp(stages=1, instances=1)    	# Create object of the execution pattern class</span>
 </pre></div>
 </div>
 </div>
@@ -231,9 +231,9 @@ function myTimeout5() {
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input"><div class="inner_cell"><div class="input_area"><div class=" highlight hl-ipython2"><pre>
 <span class="kn">local_resource = ResourceHandle(</span>
-	<span class="kn">resource="localhost",    # name of the resource to be used</span>
-	<span class="kn">cores=1,    # number of cores to be requested</span>
-	<span class="kn">walltime=10,    # duration of resource request</span>
+	<span class="kn">resource="localhost",    	# name of the resource to be used</span>
+	<span class="kn">cores=1,    			# number of cores to be requested</span>
+	<span class="kn">walltime=10,    		# duration of resource request</span>
 	<span class="kn">database_url='mongodb://rp:rp@ds015335.mlab.com:15335/rp')</span>
 <span class="kn">local_resource.allocate()</span>
 </pre></div>
