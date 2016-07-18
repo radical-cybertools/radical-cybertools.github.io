@@ -100,12 +100,11 @@ $ source myenv/bin/activate
 <div class="container">
 <h2 id="_run_rp">Run Ensemble Toolkit</h2>
 <div class="container">
-<div class="paragraph"><p>We present here an example script that uses ensemble toolkit components to submit a 
-bag of tasks where each task performs a checksum on a given data. Run the following commands to download and launch the script.</p></div>
+<div class="paragraph"><p>We present here an example script that uses ensemble toolkit components to submit one task to your local machine that writes "Hello World" to a file. Run the following commands to launch the script.</p></div>
 <div class="content">
 <pre>
-<code>(myenv)$ cd $HOME/myenv/share/radical.ensemblemd/examples
-(myenv)$ RADICAL_ENTK_VERBOSE=REPORT python quick_start.py</code>
+<code>(myenv)$ cd $HOME/myenv/share/radical.ensemblemd/user_guide/scripts
+(myenv)$ python get_started.py</code>
 </pre>
 </div>
 <div class="paragraph"><p>When you run this application, it should print the following output</p></div>
@@ -115,14 +114,14 @@ bag of tasks where each task performs a checksum on a given data. Run the follow
 <pre>
 	<code>
 ================================================================================
- EnsembleMD (0.4.5)                                                  
+ EnsembleMD (0.4.5)                                                 
 ================================================================================
 
 Starting Allocation                                                           ok
 Verifying pattern                                                             ok
 Starting pattern execution                                                    ok
 --------------------------------------------------------------------------------
-Executing 16 instances of 1 stages on 1 allocated core(s) on 'localhost'        
+Executing 1 instances of 1 stages on 2 allocated core(s) on 'local.localhost'   
 
 Job waiting on queue...
 Job is now running !
@@ -131,32 +130,14 @@ Waiting for stage_1 to complete.                                            done
 Pattern execution successfully finished                                         
 
 
-Resulting checksums:
-  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
-  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
-  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
-  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
-  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
-  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
-  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
-  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
-  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
-  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
-  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
-  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
-  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
-  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
-  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
-  * da39a3ee5e6b4b0d3255bfef95601890afd80709  UTF-8-demo.txt
-
 Starting Deallocation..
 Resource allocation cancelled.                                              done
-
---------------------------------------------------------------------------------
 </code></pre></div></div>
 <div class="container">
 	<div class="paragraph">
-		This example was to give you a quick glimpse of the interface and the execution procedure. To construct the bag of tasks workload, you use the Pipeline of Ensembles execution pattern (PoE) with the number of pipeline stages set to 1. The example runs locally on your machine where a file "UTF-8-demo.txt" is downloaded. Each task then performs a checksum on this file and the output is then presented at the end.
+		To construct the workload, we used the Pipeline of Ensembles execution pattern (PoE) with the number of pipeline stages set to 1 and instances (i.e. tasks) to 1. The example runs locally on your machine. Execution of the task creates a file "output.txt" in $HOME/radical.pilot.sandbox with the contents "Hello World".
+		
+		This example was to give you a quick glimpse of the interface, execution procedure and output verbosity. 
 
 		To look at other examples, please see the <a href="http://radicalensemblemd.readthedocs.io/en/latest/">documentation</a>
 	</div>
