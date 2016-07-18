@@ -194,7 +194,8 @@ function myTimeout5() {
 		<div class="text_cell_render border-box-sizing rendered_html">
 			<h2 id="2.-Local-Example">2. Local Example<a class="anchor-link" href="#2.-Local-Example"></a></h2>
 			<p>This example shows how to execute a task on your local machine that writes "Hello World" to a file and downloads the file using Ensemble toolkit components.</p>
-			<h3 id="2.1-Create-a-new-execution-pattern-class">2.1 Create a new Execution Pattern class<a class="anchor-link" href="#2.1-Create-a-new-Execution-Pattern-class"></a></h3>
+			<h3 id="2.1-Create-the-workload">2.1 Create the workload<a class="anchor-link" href="#2.1-Create-the-workload"></a></h3>
+			<p>We first create the worload using one of the execution patterns provided by Ensemble toolkit. In this case, we use Pipeline of Ensembles which is essentially multiple stages of ensembles of tasks where each stage begins execution after the completion of all the tasks in the previous stage. We choose number of stages=1, number of instances (i.e. of tasks) =1 for this simple case.</p>
 		</div>
 	</div>
 </div>
@@ -208,6 +209,8 @@ function myTimeout5() {
 		<span class="kn">k = Kernel(name="misc.hello")</span>
 		<span class="kn">k.arguments = ["--file=output.txt"]</span>
 		<span class="kn">k.download_output_data = ['./temp.txt > output_file.txt']</span>
+
+<span class="kn">app=MyApp(stages=1, instances=1)</span>
 </pre></div>
 </div>
 </div>
@@ -220,6 +223,7 @@ function myTimeout5() {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="2.2-Submit-Pilot-and-add-to-Unit-Manager">2.2 Create a Resource Handle<a class="anchor-link" href="#2.2-Submit-Pilot-and-add-to-Unit-Manager"></a></h3>
+<p>Next, we allocate the required amount of resources. In this case, we request for 1 core on localhost for a duration of 10 minutes. A URL to a database is also required as the underlying components of Ensemble toolkit required a MongoDB for task coordination and bookkeeping.</p>
 </div>
 </div>
 </div>
@@ -248,6 +252,7 @@ function myTimeout5() {
 <div class="prompt input_prompt"></div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="2.3-Submit-Compute-Units">2.3 Run the workload<a class="anchor-link" href="#2.3-Submit-Compute-Units"></a></h3>
+<p> Simple run our workload on the acquired resources.</p>
 
 </div>
 </div>
@@ -274,6 +279,7 @@ function myTimeout5() {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="2.6-Close-and-Delete-Session">2.4 Deallocate resources<a class="anchor-link" href="#2.6-Close-and-Delete-Session"></a></h3>
+<p>When workload execution is complete, we can deallocate the acquired resources.</p>
 </div>
 </div>
 </div>
