@@ -104,9 +104,8 @@ $ source RADICALPilot/bin/activate
 Scripts have a .py file extension. Run the following commands
 to launch a simple /bin/date application in local machine.</p></div>
 <div class="content">
-<pre><code>$ wget https://raw.githubusercontent.com/radical-cybertools/radical.pilot/master/examples/00_getting_started.py
-$ wget https://raw.githubusercontent.com/radical-cybertools/radical.pilot/master/examples/config.json
-$ python 00_getting_started.py
+<pre><code>(RADICALPilot)$ cd $HOME/RADICALPilot/share/radical.pilot/examples
+(RADICALPilot)$ python 00_getting_started.py
 </code></pre>
 </div>
 <div class="paragraph"><p>When you run this application, it should print the following output</p></div>
@@ -125,7 +124,7 @@ read config                                                                   <f
 submit pilots                                                                   
 
 create pilot manager                                                          <font color="green">ok</font>
-create pilot description [local.localhost:64]                                 <font color="green">ok</font>
+create pilot description [local.localhost:2]                                 <font color="green">ok</font>
 submit 1 pilot(s) .                                                           <font color="green">ok</font>
 
 --------------------------------------------------------------------------------
@@ -155,13 +154,13 @@ close pilot manager                                                            \
 wait for 1 pilot(s) *                                                         <font color="green">ok</font>
                                                                               <font color="green">ok</font>
 close unit manager                                                            <font color="green">ok</font>
-session lifetime: 37.0s                                                       <font color="green">ok</font>
+session lifetime: 55.4s                                                       <font color="green">ok</font>
 
 --------------------------------------------------------------------------------
 </code></pre></div></div>
 <div class="container">
   <div class="paragraph">
-    As it is executed, the script creates a pilot of at most 64 cores and submits 128 tasks to the pilot. These tasks be executed in parallel on the available cores; once the tasks are executed the pilot will shut down. Upon completion of the script, you will see how long it took for the script to run (relative to the clock on your machine). In your $HOME folder, you will see a folder named "radical.pilot.sandbox", which is the folder created to hold all of the sessions which run on your machine. In "radical.pilot.sandbox", you will see a folder named "<session_id>-pilot-0000". In that pilot folder, you will find 128 folders, from "unit.000000" to "unit.000127". These unit folders contain the tasks that were actually executed. Go into one of them and check the STDOUT file; you should see today's date!
+    As it is executed, the script creates a pilot of 2 cores and submits 128 tasks to the pilot. These tasks be executed in parallel on the available cores; once the tasks are executed the pilot will shut down. Upon completion of the script, you will see how long it took for the script to run (relative to the clock on your machine). In your $HOME folder, you will see a folder named "radical.pilot.sandbox", which is the folder created to hold all of the sessions which run on your machine. In "radical.pilot.sandbox", you will see a folder named "<session_id>-pilot-0000". In that pilot folder, you will find 128 folders, from "unit.000000" to "unit.000127". These unit folders contain the tasks that were actually executed. Go into one of them and check the STDOUT file; you should see today's date!
   </div>
 </div>
 </div>
