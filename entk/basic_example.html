@@ -207,7 +207,7 @@ function myTimeout5() {
 		<span class="kn">PoE.__init__(self, stages,instances)</span>
 	<span class="kn">def stage_1(self, instance):</span>
 		<span class="kn">k = Kernel(name="misc.hello")    				# name of the kernel to be executed by each task</span>
-		<span class="kn">k.arguments = ["--file=temp.txt"]    			# arguments to the kernel</span>
+		<span class="kn">k.arguments = ["--file=temp.txt"]    				# arguments to the kernel</span>
 		<span class="kn">k.download_output_data = ['./temp.txt > output_file.txt']    	# download "temp.txt" as "output_file.txt"</span>
 
 <span class="kn">app=MyApp(stages=1, instances=1)    	# Create object of the execution pattern class</span>
