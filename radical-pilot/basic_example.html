@@ -112,7 +112,7 @@ function execute4(){
 }
 function myTimeout4() {
     document.getElementById("output4").innerHTML = '<div class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_stream output_stdout output_text"><pre>uid: pilot.0005<br>resource: local.localhost<br>sandbox: file://localhost/home/radical/radical.pilot.sa...<br>state: PendingLaunch</pre></div></div></div>';
-        Executed = 3;
+        Executed = 4;
 }
 
 
@@ -326,7 +326,7 @@ function myTimeout10() {
 <span class="n">cudesc1</span><span class="o">.</span><span class="n">environment</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;CU_NO&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
 <span class="n">cudesc1</span><span class="o">.</span><span class="n">executable</span>  <span class="o">=</span> <span class="s2">&quot;/bin/echo&quot;</span>
 <span class="n">cudesc1</span><span class="o">.</span><span class="n">arguments</span>   <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;I am CU number $CU_NO&#39;</span><span class="p">]</span>
-<span class="n">cudesc1</span><span class="o">.</span><span class="n">cores</span>       <span class="o">=</span> <span class="mi">1</span>
+<span class="n">cudesc1</span><span class="o">.</span><span class="n">cores</span>       <span class="o">=</span> <span class="mi">1</span><br>
 <span class="n">cudesc2</span> <span class="o">=</span> <span class="n">rp</span><span class="o">.</span><span class="n">ComputeUnitDescription</span><span class="p">()</span>
 <span class="n">cudesc2</span><span class="o">.</span><span class="n">environment</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;CU_NO&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
 <span class="n">cudesc2</span><span class="o">.</span><span class="n">executable</span>  <span class="o">=</span> <span class="s2">&quot;/bin/echo&quot;</span>
@@ -337,13 +337,6 @@ function myTimeout10() {
 </div>
 </div>
 </div>
-<button onclick="execute5()">Execute</button>
-
-
-<div class="output_wrapper" id="output5">
-
-</div>
-
 
 </div>
 <div class="cell border-box-sizing text_cell rendered">
@@ -384,7 +377,7 @@ function myTimeout10() {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Inspect the output of the CU</p>
+<p>Inspect the output of the CUs</p>
 
 </div>
 </div>
