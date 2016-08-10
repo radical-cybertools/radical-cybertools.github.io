@@ -283,7 +283,7 @@ function myTimeout10() {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Once we created a pilot, we can  inform the unit manager that this pilot's resources can be used for unit execution, via <code>umgr.add_pilot(pilot)</code>.  Multiple pilots can be added, and also later be removed via <code>umgr.remove_pilot()</code>.  The Unit Manager will schedule incoming compute units across all available pilots.</p>
+<p>The <code>umgr.add_pilot(pilot)</code> binds a Pilot to a Unit Manager. This informs the Unit Manager that the resources of the pilot can be used for exeuction of units. Multiple pilots can be bound to a unit manager, and later be removed via <code>umgr.remove_pilot()</code>. The Unit Manager will schedule incoming compute units across all available pilots.</p>
 
 </div>
 </div>
@@ -315,7 +315,7 @@ function myTimeout10() {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.3-Submit-Compute-Units">2.3 Submit Compute Units<a class="anchor-link" href="#2.3-Submit-Compute-Units"></a></h3><p>Create a description of the compute unit, which specifies the details of the task to be executed.</p>
+<h3 id="2.3-Submit-Compute-Units">2.3 Submit Compute Units<a class="anchor-link" href="#2.3-Submit-Compute-Units"></a></h3><p>Create a description of the Compute Unit, which specifies the details of the task to be executed.</p>
 
 </div>
 </div>
@@ -355,7 +355,7 @@ function myTimeout10() {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Submit the previously created ComputeUnits descriptions to the PilotManager. This will trigger the selected scheduler (in this case the round-robin scheduler) to start assigning ComputeUnits to the ComputePilots.</p>
+<p>Submit the previously created Compute Units descriptions to the Unit Manager. This will trigger the selected scheduler (in this case the round-robin scheduler) to start assigning Compute Units to the Pilots.</p>
 
 </div>
 </div>
