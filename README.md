@@ -11,4 +11,4 @@ Workspace for the RADICAL Ensemble MD Toolkit, a conglomerate of
   * Replica Exchange: https://github.com/radical-cybertools/ReplicaExchange
   * 
 
-The project's wiki can be found at: https://github.com/radical-cybertools/radical-cybertools.github.io/wiki. The
+The project's wiki can be found at: https://github.com/radical-cybertools/radical-cybertools.github.io/wiki. 
