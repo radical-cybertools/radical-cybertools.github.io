@@ -1,0 +1,54 @@
+url: https://Abdullah-Ghani.github.io
+baseurl: /radical-cybertools/
+
+# Site settings
+title: RCT
+email: shantenu.jha@rutgers.edu
+description:  Middleware for High Performance Computing   
+
+
+# Team names, titles and social links
+people:
+- name: Shantenu Jha
+  pic: 1
+  position: Associate Professor/Lead Investigator
+  social:
+    - title: linkedin
+      url: https://www.linkedin.com/in/shantenu-jha-5625153/
+    - title: github
+      url: https://github.com/shantenujha
+
+
+- name: Andre Merkzy
+  pic: 2
+  position: Lead Developer
+  social:
+    - title: linkedin
+      url: #
+    - title: github
+      url: https://github.com/andre-merzky
+
+- name: Matteo Turilli
+  pic: matteo
+  position: Assistant Research Professor
+  social:
+    - title: linkedin
+      url: #
+    - title: github
+      url: https://github.com/mturilli
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: twitter
+    url: https://twitter.com/LabRadical
+  - title: github
+    url: https://github.com/radical-cybertools
+
+# Postal address (add as many lines as necessary)
+address:
+  - line: 96 Frelinghuysen Rd
+  - line: Piscataway Township, NJ 08854
+
+# Build settings
+markdown: kramdown
+permalink: pretty

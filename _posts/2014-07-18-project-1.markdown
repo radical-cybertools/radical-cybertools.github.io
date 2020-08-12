@@ -1,0 +1,15 @@
+---
+title: DeepDriveMD
+subtitle: Deep-Learning Driven Adaptive Molecular Simulations for Protein Folding
+layout: default
+modal-id: https://arxiv.org/pdf/1909.07817.pdf
+date: 2019-09-17
+img: dreams.png
+thumbnail: deepDrive.jpg
+alt: image-alt
+project-date: April 2014
+client: Start Bootstrap
+category: Web Development
+description: Lorem ipsum dolor sit amet, usu cu alterum nominavi lobortis. At duo novum diceret. Tantas apeirian vix et, usu sanctus postulant inciderint ut, populo diceret necessitatibus in vim. Cu eum dicam feugiat noluisse.
+
+---

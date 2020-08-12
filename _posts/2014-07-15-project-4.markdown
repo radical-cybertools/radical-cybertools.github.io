@@ -1,0 +1,15 @@
+---
+title: FACTS
+subtitle: Framework for Assessing Changes To Sea-level
+layout: default
+modal-id: http://radical.rutgers.edu/projects/sea_level_rise
+date: 2014-07-15
+img: treehouse.png
+thumbnail: sea_level_rise.jpg
+alt: image-alt
+project-date: April 2014
+client: Start Bootstrap
+category: Web Development
+description: Lorem ipsum dolor sit amet, usu cu alterum nominavi lobortis. At duo novum diceret. Tantas apeirian vix et, usu sanctus postulant inciderint ut, populo diceret necessitatibus in vim. Cu eum dicam feugiat noluisse.
+
+---
