@@ -1,0 +1,60 @@
+/* Background like landing page */
+body {
+    background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+    color: #fff;
+}
+
+/* Gradient animation */
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Nav bar glass effect */
+.md-header, .md-tabs {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Headings gradient */
+.md-typeset h1, .md-typeset h2, .md-typeset h3 {
+    background: linear-gradient(135deg, #00f5ff, #ff0080, #8a2be2, #00ff41);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Links */
+.md-typeset a {
+    color: #00f5ff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.md-typeset a:hover {
+    color: #ff0080;
+}
+
+/* Code blocks */
+.highlight {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/* Buttons like landing page */
+.md-button {
+    background: linear-gradient(135deg, #00f5ff, #ff0080);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 0.6rem 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.md-button:hover {
+    transform: scale(1.05);
+}

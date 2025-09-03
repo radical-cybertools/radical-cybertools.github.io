@@ -113,7 +113,9 @@ the creation of scalable, portable, and adaptive workflows that can be applied
 to diverse scientific domains, including molecular dynamics, weather modeling, 
 and large-scale simulations.
 
-<img src="assets/entk.svg" alt="drawing" width="750"/>
+<div style="text-align: center;">
+  <img src="../assets/entk.svg" alt="drawing" width="750" />
+</div>
 
 #### Citation
 ```bibtex
@@ -168,7 +170,9 @@ sequence optimization, and machine learning-based analysis to improve protein
 stability and substrate binding affinity, ultimately guiding experimental 
 validation and model refinement.
 
-<img src="assets/impress.svg" alt="drawing" width="750"/>
+<div style="text-align: center;">
+  <img src="../assets/impress.svg" alt="drawing" width="750" />
+</div>
 
 #### Citation
 ```bibtex
@@ -247,4 +251,3 @@ customizable and extendable, fostering community contributions and reuse.
   url={https://doi.ieeecomputersociety.org/10.1109/CCGrid59990.2024.00059},
   publisher={IEEE Computer Society}}
 ```
-
