@@ -56,7 +56,7 @@ jobs:
       - name: Fetch publications
         run: |
           . doc_env/bin/activate
-          python scripts/fetch_publications.py
+          python scripts/fetch_publications.py --author "Shantenu Jha"
 
       - name: Generate Markdown page
         run: |

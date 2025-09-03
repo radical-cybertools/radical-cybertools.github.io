@@ -1,3 +1,4 @@
+import argparse
 import requests
 from tabulate import tabulate
 import csv
@@ -93,16 +94,17 @@ def export_csv(table, filename="crossref_results.csv"):
 
 # ---- Main ----
 if __name__ == "__main__":
-    author = input("Author name (required): ")
-    start = input("Start year (optional): ")
-    end = input("End year (optional): ")
-    keyword = input("Keyword (optional): ")
+    parser = argparse.ArgumentParser(description="Fetch publications and generate Markdown.")
+    parser.add_argument("--author", required=True, help="Author name")
+    parser.add_argument("--start-year", type=int, default=None)
+    parser.add_argument("--end-year", type=int, default=None)
+    parser.add_argument("--keyword", default=None)
+    parser.add_argument("--max-results", type=int, default=200)
 
-    start_year = int(start) if start.isdigit() else None
-    end_year = int(end) if end.isdigit() else None
+    args = parser.parse_args()
 
-    items = fetch_crossref(author, start_year, end_year, keyword, max_results=200)
-    items = filter_by_author(items, author)
+    items = fetch_crossref(args.author, args.start_year, args.end_year, args.keyword, args.max_results)
+    items = filter_by_author(items, args.author)
     items = remove_duplicates_by_title(items)  # Remove duplicates
 
     if not items:
