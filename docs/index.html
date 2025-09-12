@@ -60,14 +60,7 @@
             animation: float 20s infinite linear;
             opacity: 0.6;
         }
-        
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
-        }
-        
+
         /* Hero section */
         .hero {
             min-height: 100vh;
@@ -84,10 +77,20 @@
             z-index: 2;
         }
         
+        .hero-title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+
+        
         .hero-title {
             font-size: clamp(3rem, 8vw, 8rem);
             font-weight: 700;
-            margin-bottom: 1rem;
             background: linear-gradient(135deg, #00f5ff, #cc8cac, #cca2f3, #a1e5b2);
             background-size: 300% 300%;
             -webkit-background-clip: text;
@@ -181,7 +184,7 @@
             font-weight: 700;
             margin-bottom: 3rem;
             text-align: center;
-            background: linear-gradient(135deg, #00f5ff, #ffffff);
+            background: linear-gradient(135deg, #0f55d6, #ffffff);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -193,6 +196,7 @@
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
+            align-items: stretch; /* This ensures all cards have the same height */
         }
         
         .tool-card {
@@ -205,6 +209,9 @@
             overflow: hidden;
             transition: all 0.4s ease;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Ensures all cards take full height of the grid row */
         }
         
         .tool-card::after {
@@ -313,10 +320,18 @@
             border-radius: 10px;
         }
         
-        /* Hover effects */
-        .tool-card .tool-description {
+        /* Card content structure for better alignment */
+        .tool-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tool-description {
             color: #cccccc;
             line-height: 1.8;
+            flex-grow: 1; /* This pushes the button to the bottom */
+            margin-bottom: 1.5rem;
         }
         
         /* 3D floating elements */
@@ -330,11 +345,6 @@
             z-index: 1;
         }
         
-        @keyframes float3D {
-            0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
-            50% { transform: translateY(-20px) rotateX(180deg) rotateY(180deg); }
-        }
-        
         /* Responsive design */
         @media (max-width: 768px) {
             .tools-grid {
@@ -343,6 +353,11 @@
             
             .hero-title {
                 font-size: 3rem;
+            }
+            
+            .hero-title-container {
+                flex-direction: column;
+                gap: 1rem;
             }
             
             .container {
@@ -378,11 +393,6 @@
             gap: 1rem;
         }
 
-        .fade-in {
-            opacity: 1 !important;
-            transform: none !important;
-        }
-
         .learn-more-btn {
             display: inline-block;
             padding: 0.8rem 1.8rem;
@@ -400,12 +410,17 @@
             transition: transform 0.3s ease;
             position: relative;
             overflow: hidden;
+            align-self: center;
+            text-decoration: none;
+            text-align: center;
+            margin-top: auto; /* This pushes the button to the bottom of the card */
         }
 
         .learn-more-btn:hover {
             transform: scale(1.08);
             box-shadow: 0 0 25px rgba(0, 245, 255, 0.5);
         }
+        
         @keyframes buttonGlow {
             0% {
                 background-position: 0% 50%;
@@ -415,16 +430,6 @@
                 background-position: 100% 50%;
                 box-shadow: 0 0 40px rgba(255, 0, 128, 0.4);
             }
-        }
-        .tool-card {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .learn-more-btn {
-            align-self: center;
-            margin-top: 1.5rem;
         }
 
         .top-nav {
@@ -451,8 +456,21 @@
         .nav-logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #00f5ff;
+            color: #ffffff;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-logo-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            padding: 6px;
+            background: linear-gradient(1135deg, #ffffff, #ffffff);
+            box-shadow: 0 2px 12px var(--shadow-glow);
+            transition: all 0.3s ease;
         }
 
         .nav-links {
@@ -489,7 +507,10 @@
 <body>
     <nav class="top-nav">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo">RADICAL Cybertools</a>
+            <a href="#hero" class="nav-logo">
+                <img src="assets/radical-logo-transparent.png" alt="RADICAL Cybertools Logo" class="nav-logo-icon" />
+                RADICAL Cybertools
+            </a>
             <ul class="nav-links">
                 <li><a href="/publications/">Publications</a></li>
                 <li><a href="#core">Core Tools</a></li>
@@ -505,7 +526,9 @@
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-content">
-            <h1 class="hero-title">RADICAL Cybertools</h1>
+            <div class="hero-title-container">
+                <h1 class="hero-title">RADICAL Cybertools</h1>
+            </div>
             <p class="hero-subtitle">Promoting a Standards-Based, Abstraction-Driven Approach to High-Performance and Distributed Computing</p>
             <p class="hero-description">
                 The RADICAL Cybertools (RCT) are a suite of software systems that facilitate the design and execution of complex scientific workflows on high-performance computing (HPC) platforms. RCT takes care of the hard parts of execution—acquiring resources, managing heterogeneous tasks, and scaling to leadership-class HPC platforms—so that researchers can focus on their science rather than low-level technical details.
@@ -523,43 +546,49 @@
             <div class="tools-grid">
                 <!-- RADICAL-Pilot -->
                 <div class="tool-card fade-in">
-                    <h3 class="tool-title">RADICAL-Pilot</h3>
-                    <div class="tool-badges">
-                        <a href="https://github.com/radical-cybertools/radical.pilot" class="badge badge-code">GitHub</a>
-                        <a href="https://radicalpilot.readthedocs.io" class="badge badge-web">Online</a>
-                        <a href="https://ieeexplore.ieee.org/document/9519521" class="badge badge-cite">Cite 2022</a>
+                    <div class="tool-content">
+                        <h3 class="tool-title">RADICAL-Pilot</h3>
+                        <div class="tool-badges">
+                            <a href="https://github.com/radical-cybertools/radical.pilot" class="badge badge-code">GitHub</a>
+                            <a href="https://radicalpilot.readthedocs.io" class="badge badge-web">Online</a>
+                            <a href="https://ieeexplore.ieee.org/document/9519521" class="badge badge-cite">Cite 2022</a>
+                        </div>
+                        <p class="tool-description">
+                            <strong>RADICAL-Pilot</strong> (RP) is a scalable and flexible Pilot-Job system that provides application-level resource management capabilities on HPC resources. RP interfaces to various low level resource managers like Slurm, PBS(Pro), and also to various task execution backends like Slurm, OpenMPI, MPICH, PRRTE, JSRUN, Flux, Dragon, and others.
+                        </p>
+                        <a href="main/#radical-pilot" class="learn-more-btn">Learn More</a>
                     </div>
-                    <p class="tool-description">
-                        <strong>RADICAL-Pilot</strong> (RP) is a scalable and flexible Pilot-Job system that provides application-level resource management capabilities on HPC resources. RP interfaces to various low level resource managers like Slurm, PBS(Pro), and also to various task execution backends like Slurm, OpenMPI, MPICH, PRRTE, JSRUN, Flux, Dragon, and others.
-                    </p>
-                    <a href="main/#radical-pilot" class="learn-more-btn">Learn More</a>
                 </div>
 
                 <!-- RADICAL-AsyncFlow -->
                 <div class="tool-card fade-in">
-                    <h3 class="tool-title">RADICAL-AsyncFlow</h3>
-                    <div class="tool-badges">
-                        <a href="https://github.com/radical-cybertools/radical.asyncflow" class="badge badge-code">GitHub</a>
-                        <a href="https://radical-cybertools.github.io/radical.asyncflow" class="badge badge-web">Online</a>
+                    <div class="tool-content">
+                        <h3 class="tool-title">RADICAL-AsyncFlow</h3>
+                        <div class="tool-badges">
+                            <a href="https://github.com/radical-cybertools/radical.asyncflow" class="badge badge-code">GitHub</a>
+                            <a href="https://radical-cybertools.github.io/radical.asyncflow" class="badge badge-web">Online</a>
+                        </div>
+                        <p class="tool-description">
+                            <strong>RADICAL-AsyncFlow</strong> (RAF) is an asynchronous scripting library for building high-performance, scalable workflows that run on HPC systems, clusters, and local machines. Designed for flexibility and speed, it allows users to compose complex workflows from async and sync tasks with clear dependencies, while ensuring efficient execution at any scale with different execution backends.
+                        </p>
+                        <a href="main/#radical-asyncflow" class="learn-more-btn">Learn More</a>
                     </div>
-                    <p class="tool-description">
-                        <strong>RADICAL-AsyncFlow</strong> (RAF) is an asynchronous scripting library for building high-performance, scalable workflows that run on HPC systems, clusters, and local machines. Designed for flexibility and speed, it allows users to compose complex workflows from async and sync tasks with clear dependencies, while ensuring efficient execution at any scale with different execution backends.
-                    </p>
-                    <a href="main/#radical-asyncflow" class="learn-more-btn">Learn More</a>
                 </div>
 
                 <!-- RADICAL-EnTK -->
                 <div class="tool-card fade-in">
-                    <h3 class="tool-title">RADICAL-EnTK</h3>
-                    <div class="tool-badges">
-                        <a href="https://github.com/radical-cybertools/radical.entk" class="badge badge-code">GitHub</a>
-                        <a href="https://radicalentk.readthedocs.io" class="badge badge-web">Online</a>
-                        <a href="https://ieeexplore.ieee.org/document/8425207" class="badge badge-cite">Cite 2018</a>
+                    <div class="tool-content">
+                        <h3 class="tool-title">RADICAL-EnTK</h3>
+                        <div class="tool-badges">
+                            <a href="https://github.com/radical-cybertools/radical.entk" class="badge badge-code">GitHub</a>
+                            <a href="https://radicalentk.readthedocs.io" class="badge badge-web">Online</a>
+                            <a href="https://ieeexplore.ieee.org/document/8425207" class="badge badge-cite">Cite 2018</a>
+                        </div>
+                        <p class="tool-description">
+                            <strong>RADICAL-EnTK</strong> (Ensemble Toolkit, EnTK) is a Python framework designed to simplify the development and execution of applications composed of many computational tasks, known as ensembles, on high-performance computing (HPC) systems. It provides high-level abstractions that separate the logical description of an application from the complexities of resource allocation and task scheduling.
+                        </p>
+                        <a href="main/#radical-entk" class="learn-more-btn">Learn More</a>
                     </div>
-                    <p class="tool-description">
-                        <strong>RADICAL-EnTK</strong> (Ensemble Toolkit, EnTK) is a Python framework designed to simplify the development and execution of applications composed of many computational tasks, known as ensembles, on high-performance computing (HPC) systems. It provides high-level abstractions that separate the logical description of an application from the complexities of resource allocation and task scheduling.
-                    </p>
-                    <a href="main/#radical-entk" class="learn-more-btn">Learn More</a>
                 </div>
             </div>
         </div>
@@ -573,56 +602,64 @@
             <div class="tools-grid">
                 <!-- ROSE -->
                 <div class="tool-card fade-in">
-                    <h3 class="tool-title">ROSE</h3>
-                    <div class="tool-badges">
-                        <a href="https://github.com/radical-cybertools/ROSE" class="badge badge-code">GitHub</a>
-                        <a href="https://radical-cybertools.github.io/ROSE" class="badge badge-web">Online</a>
+                    <div class="tool-content">
+                        <h3 class="tool-title">ROSE</h3>
+                        <div class="tool-badges">
+                            <a href="https://github.com/radical-cybertools/ROSE" class="badge badge-code">GitHub</a>
+                            <a href="https://radical-cybertools.github.io/ROSE" class="badge badge-web">Online</a>
+                        </div>
+                        <p class="tool-description">
+                            <strong>ROSE</strong>: RADICAL Orchestrator for Surrogate Exploration is a Python framework designed for concurrent and adaptive execution of ML learning workflows on high-performance computing (HPC) resources. It empowers scientists and engineers to develop active learning (AL) and reinforcement learning (RL) via a pre-defined Learning Policies for scientific discovery.
+                        </p>
+                        <a href="main/#rose" class="learn-more-btn">Learn More</a>
                     </div>
-                    <p class="tool-description">
-                        <strong>ROSE</strong>: RADICAL Orchestrator for Surrogate Exploration is a Python framework designed for concurrent and adaptive execution of ML learning workflows on high-performance computing (HPC) resources. It empowers scientists and engineers to develop active learning (AL) and reinforcement learning (RL) via a pre-defined Learning Policies for scientific discovery.
-                    </p>
-                    <a href="main/#rose" class="learn-more-btn">Learn More</a>
                 </div>
 
                 <!-- IMPRESS -->
                 <div class="tool-card fade-in">
-                    <h3 class="tool-title">IMPRESS</h3>
-                    <div class="tool-badges">
-                        <a href="https://github.com/radical-collaboration/IMPRESS" class="badge badge-code">GitHub</a>
-                        <a href="https://radical-project.github.io/impress" class="badge badge-web">Online</a>
-                        <a href="https://ieeexplore.ieee.org/document/11105916" class="badge badge-cite">Cite 2025</a>
+                    <div class="tool-content">
+                        <h3 class="tool-title">IMPRESS</h3>
+                        <div class="tool-badges">
+                            <a href="https://github.com/radical-collaboration/IMPRESS" class="badge badge-code">GitHub</a>
+                            <a href="https://radical-project.github.io/impress" class="badge badge-web">Online</a>
+                            <a href="https://ieeexplore.ieee.org/document/11105916" class="badge badge-cite">Cite 2025</a>
+                        </div>
+                        <p class="tool-description">
+                            <strong>IMPRESS</strong>: Integrated Machine-learning for PRotEin Structures at Scale is a high-performance computational framework designed to enable the inverse design of proteins using advanced foundation models such as AlphaFold and ESM2. It leverages a closed-loop design process that integrates structure prediction, sequence optimization, and machine learning-based analysis.
+                        </p>
+                        <a href="main/#impress" class="learn-more-btn">Learn More</a>
                     </div>
-                    <p class="tool-description">
-                        <strong>IMPRESS</strong>: Integrated Machine-learning for PRotEin Structures at Scale is a high-performance computational framework designed to enable the inverse design of proteins using advanced foundation models such as AlphaFold and ESM2. It leverages a closed-loop design process that integrates structure prediction, sequence optimization, and machine learning-based analysis.
-                    </p>
-                    <a href="main/#impress" class="learn-more-btn">Learn More</a>
                 </div>
 
                 <!-- DeepDriveMD -->
                 <div class="tool-card fade-in">
-                    <h3 class="tool-title">DeepDriveMD</h3>
-                    <div class="tool-badges">
-                        <a href="https://github.com/DeepDriveMD" class="badge badge-code">GitHub</a>
-                        <a href="https://deepdrivemd.github.io" class="badge badge-web">Online</a>
-                        <a href="https://ieeexplore.ieee.org/document/9820679" class="badge badge-cite">Cite 2022</a>
+                    <div class="tool-content">
+                        <h3 class="tool-title">DeepDriveMD</h3>
+                        <div class="tool-badges">
+                            <a href="https://github.com/DeepDriveMD" class="badge badge-code">GitHub</a>
+                            <a href="https://deepdrivemd.github.io" class="badge badge-web">Online</a>
+                            <a href="https://ieeexplore.ieee.org/document/9820679" class="badge badge-cite">Cite 2022</a>
+                        </div>
+                        <p class="tool-description">
+                            <strong>DeepDriveMD</strong>: Deep-Learning Driven Adaptive Molecular Simulations (DDMD) is a Python framework for orchestrating AI-steered molecular dynamics (MD) simulations on HPC systems. The next generation of DDMD is built on ROSE, it enables concurrent ensembles of MD simulations and AI model training.
+                        </p>
+                        <a href="main/#deepdrivemd" class="learn-more-btn">Learn More</a>
                     </div>
-                    <p class="tool-description">
-                        <strong>DeepDriveMD</strong>: Deep-Learning Driven Adaptive Molecular Simulations (DDMD) is a Python framework for orchestrating AI-steered molecular dynamics (MD) simulations on HPC systems. The next generation of DDMD is built on ROSE, it enables concurrent ensembles of MD simulations and AI model training.
-                    </p>
-                    <a href="main/#deepdrivemd" class="learn-more-btn">Learn More</a>
                 </div>
 
                 <!-- Workflow MiniApp -->
                 <div class="tool-card fade-in">
-                    <h3 class="tool-title">Workflow-MiniApp</h3>
-                    <div class="tool-badges">
-                        <a href="https://github.com/radical-cybertools/workflow-mini-apps" class="badge badge-code">GitHub</a>
-                        <a href="https://www.computer.org/csdl/proceedings-article/ccgrid/2024/956600a465/20Shd1ncZ9K" class="badge badge-cite">Cite 2024</a>
+                    <div class="tool-content">
+                        <h3 class="tool-title">Workflow-MiniApp</h3>
+                        <div class="tool-badges">
+                            <a href="https://github.com/radical-cybertools/workflow-mini-apps" class="badge badge-code">GitHub</a>
+                            <a href="https://www.computer.org/csdl/proceedings-article/ccgrid/2024/956600a465/20Shd1ncZ9K" class="badge badge-cite">Cite 2024</a>
+                        </div>
+                        <p class="tool-description">
+                            The <strong>Workflow MiniApp</strong> framework provides the environment to build compact, self-contained applications that emulate key aspects of larger scientific workflows, enabling researchers to explore, test, and optimize computational tasks without running the full-scale workflow. At the core is wfMiniAPI, an open-source Python and C++ library.
+                        </p>
+                         <a href="main/#workflow-miniapp" class="learn-more-btn">Learn More</a>
                     </div>
-                    <p class="tool-description">
-                        The <strong>Workflow MiniApp</strong> framework provides the environment to build compact, self-contained applications that emulate key aspects of larger scientific workflows, enabling researchers to explore, test, and optimize computational tasks without running the full-scale workflow. At the core is wfMiniAPI, an open-source Python and C++ library.
-                    </p>
-                     <a href="main/#workflow-miniapp" class="learn-more-btn">Learn More</a>
                 </div>
             </div>
         </div>
@@ -688,3 +725,6 @@
             handleScrollAnimations();
             setupMouseEffects();
         });
+    </script>
+</body>
+</html>

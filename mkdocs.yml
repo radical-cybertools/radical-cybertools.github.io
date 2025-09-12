@@ -5,11 +5,10 @@ repo_url: 'https://github.com/radical-cybertools/radical-cybertools.github.io'
 edit_uri: ""
 
 theme:
+  logo: assets/radical-logo-transparent.png  # Add this line
   name: material
 
-  font:
-    text: "Space Grotesk"
-    code: "JetBrains Mono"
+
 
   features:
     - navigation.tabs
